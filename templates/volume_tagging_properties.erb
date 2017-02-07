@@ -1,0 +1,10 @@
+<% pfx = 'simianarmy::volume_tagging_properties::' -%>
+<%- if scope[pfx + 'simianarmy_calendar_is_monkey_time'] != nil -%>
+  <%--%>simianarmy.calendar.isMonkeyTime = <%= scope[pfx + 'simianarmy_calendar_is_monkey_time'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_volume_tagging_enabled'] != nil -%>
+  <%--%>simianarmy.volumeTagging.enabled = <%= scope[pfx + 'simianarmy_volume_tagging_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_volume_tagging_leashed'] != nil -%>
+  <%--%>simianarmy.volumeTagging.leashed = <%= scope[pfx + 'simianarmy_volume_tagging_leashed'] %>
+<%- end -%>

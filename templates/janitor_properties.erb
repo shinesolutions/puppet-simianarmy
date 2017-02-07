@@ -1,0 +1,139 @@
+<% pfx = 'simianarmy::janitor_properties::' -%>
+<%- if scope[pfx + 'simianarmy_calendar_close_hour'] != nil -%>
+  <%--%>simianarmy.calendar.closeHour = <%= scope[pfx + 'simianarmy_calendar_close_hour'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_calendar_open_hour'] != nil -%>
+  <%--%>simianarmy.calendar.openHour = <%= scope[pfx + 'simianarmy_calendar_open_hour'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_calendar_timezone'] != nil -%>
+  <%--%>simianarmy.calendar.timezone = <%= scope[pfx + 'simianarmy_calendar_timezone'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_eureka_enabled'] != nil -%>
+  <%--%>simianarmy.janitor.Eureka.enabled = <%= scope[pfx + 'simianarmy_janitor_eureka_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_enabled'] != nil -%>
+  <%--%>simianarmy.janitor.enabled = <%= scope[pfx + 'simianarmy_janitor_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_enabled_resources'] != nil -%>
+  <%--%>simianarmy.janitor.enabledResources = <%= scope[pfx + 'simianarmy_janitor_enabled_resources'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_image_crawler_look_back_days'] != nil -%>
+  <%--%>simianarmy.janitor.image.crawler.lookBackDays = <%= scope[pfx + 'simianarmy_janitor_image_crawler_look_back_days'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_leashed'] != nil -%>
+  <%--%>simianarmy.janitor.leashed = <%= scope[pfx + 'simianarmy_janitor_leashed'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_notification_days_before_termination'] != nil -%>
+  <%--%>simianarmy.janitor.notification.daysBeforeTermination = <%= scope[pfx + 'simianarmy_janitor_notification_days_before_termination'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_notification_default_email'] != nil -%>
+  <%--%>simianarmy.janitor.notification.defaultEmail = <%= scope[pfx + 'simianarmy_janitor_notification_default_email'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_notification_source_email'] != nil -%>
+  <%--%>simianarmy.janitor.notification.sourceEmail = <%= scope[pfx + 'simianarmy_janitor_notification_source_email'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_resources_sdb_domain'] != nil -%>
+  <%--%>simianarmy.janitor.resources.sdb.domain = <%= scope[pfx + 'simianarmy_janitor_resources_sdb_domain'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_delete_on_termination_rule_enabled'] != nil -%>
+  <%--%>simianarmy.janitor.rule.deleteOnTerminationRule.enabled = <%= scope[pfx + 'simianarmy_janitor_rule_delete_on_termination_rule_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_delete_on_termination_rule_retention_days'] != nil -%>
+  <%--%>simianarmy.janitor.rule.deleteOnTerminationRule.retentionDays = <%= scope[pfx + 'simianarmy_janitor_rule_delete_on_termination_rule_retention_days'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_no_generated_ami_rule_age_threshold'] != nil -%>
+  <%--%>simianarmy.janitor.rule.noGeneratedAMIRule.ageThreshold = <%= scope[pfx + 'simianarmy_janitor_rule_no_generated_ami_rule_age_threshold'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_no_generated_ami_rule_enabled'] != nil -%>
+  <%--%>simianarmy.janitor.rule.noGeneratedAMIRule.enabled = <%= scope[pfx + 'simianarmy_janitor_rule_no_generated_ami_rule_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_no_generated_ami_rule_retention_days'] != nil -%>
+  <%--%>simianarmy.janitor.rule.noGeneratedAMIRule.retentionDays = <%= scope[pfx + 'simianarmy_janitor_rule_no_generated_ami_rule_retention_days'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_old_detached_volume_rule_detach_days_threshold'] != nil -%>
+  <%--%>simianarmy.janitor.rule.oldDetachedVolumeRule.detachDaysThreshold = <%= scope[pfx + 'simianarmy_janitor_rule_old_detached_volume_rule_detach_days_threshold'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_old_detached_volume_rule_enabled'] != nil -%>
+  <%--%>simianarmy.janitor.rule.oldDetachedVolumeRule.enabled = <%= scope[pfx + 'simianarmy_janitor_rule_old_detached_volume_rule_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_old_detached_volume_rule_retention_days'] != nil -%>
+  <%--%>simianarmy.janitor.rule.oldDetachedVolumeRule.retentionDays = <%= scope[pfx + 'simianarmy_janitor_rule_old_detached_volume_rule_retention_days'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_old_empty_asg_rule_enabled'] != nil -%>
+  <%--%>simianarmy.janitor.rule.oldEmptyASGRule.enabled = <%= scope[pfx + 'simianarmy_janitor_rule_old_empty_asg_rule_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_old_empty_asg_rule_launch_config_age_threshold'] != nil -%>
+  <%--%>simianarmy.janitor.rule.oldEmptyASGRule.launchConfigAgeThreshold = <%= scope[pfx + 'simianarmy_janitor_rule_old_empty_asg_rule_launch_config_age_threshold'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_old_empty_asg_rule_retention_days'] != nil -%>
+  <%--%>simianarmy.janitor.rule.oldEmptyASGRule.retentionDays = <%= scope[pfx + 'simianarmy_janitor_rule_old_empty_asg_rule_retention_days'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_old_unused_launch_config_rule_age_threshold'] != nil -%>
+  <%--%>simianarmy.janitor.rule.oldUnusedLaunchConfigRule.ageThreshold = <%= scope[pfx + 'simianarmy_janitor_rule_old_unused_launch_config_rule_age_threshold'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_old_unused_launch_config_rule_enabled'] != nil -%>
+  <%--%>simianarmy.janitor.rule.oldUnusedLaunchConfigRule.enabled = <%= scope[pfx + 'simianarmy_janitor_rule_old_unused_launch_config_rule_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_old_unused_launch_config_rule_retention_days'] != nil -%>
+  <%--%>simianarmy.janitor.rule.oldUnusedLaunchConfigRule.retentionDays = <%= scope[pfx + 'simianarmy_janitor_rule_old_unused_launch_config_rule_retention_days'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_orphaned_instance_rule_enabled'] != nil -%>
+  <%--%>simianarmy.janitor.rule.orphanedInstanceRule.enabled = <%= scope[pfx + 'simianarmy_janitor_rule_orphaned_instance_rule_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_orphaned_instance_rule_instance_age_threshold'] != nil -%>
+  <%--%>simianarmy.janitor.rule.orphanedInstanceRule.instanceAgeThreshold = <%= scope[pfx + 'simianarmy_janitor_rule_orphaned_instance_rule_instance_age_threshold'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_orphaned_instance_rule_opsworks_parentage'] != nil -%>
+  <%--%>simianarmy.janitor.rule.orphanedInstanceRule.opsworks.parentage = <%= scope[pfx + 'simianarmy_janitor_rule_orphaned_instance_rule_opsworks_parentage'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_orphaned_instance_rule_retention_days_with_owner'] != nil -%>
+  <%--%>simianarmy.janitor.rule.orphanedInstanceRule.retentionDaysWithOwner = <%= scope[pfx + 'simianarmy_janitor_rule_orphaned_instance_rule_retention_days_with_owner'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_orphaned_instance_rule_retention_days_without_owner'] != nil -%>
+  <%--%>simianarmy.janitor.rule.orphanedInstanceRule.retentionDaysWithoutOwner = <%= scope[pfx + 'simianarmy_janitor_rule_orphaned_instance_rule_retention_days_without_owner'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_suspended_asg_rule_enabled'] != nil -%>
+  <%--%>simianarmy.janitor.rule.suspendedASGRule.enabled = <%= scope[pfx + 'simianarmy_janitor_rule_suspended_asg_rule_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_suspended_asg_rule_retention_days'] != nil -%>
+  <%--%>simianarmy.janitor.rule.suspendedASGRule.retentionDays = <%= scope[pfx + 'simianarmy_janitor_rule_suspended_asg_rule_retention_days'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_suspended_asg_rule_suspension_age_threshold'] != nil -%>
+  <%--%>simianarmy.janitor.rule.suspendedASGRule.suspensionAgeThreshold = <%= scope[pfx + 'simianarmy_janitor_rule_suspended_asg_rule_suspension_age_threshold'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_untagged_rule_enabled'] != nil -%>
+  <%--%>simianarmy.janitor.rule.untaggedRule.enabled = <%= scope[pfx + 'simianarmy_janitor_rule_untagged_rule_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_untagged_rule_required_tags'] != nil -%>
+  <%--%>simianarmy.janitor.rule.untaggedRule.requiredTags = <%= scope[pfx + 'simianarmy_janitor_rule_untagged_rule_required_tags'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_untagged_rule_resources'] != nil -%>
+  <%--%>simianarmy.janitor.rule.untaggedRule.resources = <%= scope[pfx + 'simianarmy_janitor_rule_untagged_rule_resources'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_untagged_rule_retention_days_with_owner'] != nil -%>
+  <%--%>simianarmy.janitor.rule.untaggedRule.retentionDaysWithOwner = <%= scope[pfx + 'simianarmy_janitor_rule_untagged_rule_retention_days_with_owner'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_untagged_rule_retention_days_without_owner'] != nil -%>
+  <%--%>simianarmy.janitor.rule.untaggedRule.retentionDaysWithoutOwner = <%= scope[pfx + 'simianarmy_janitor_rule_untagged_rule_retention_days_without_owner'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_unused_image_rule_enabled'] != nil -%>
+  <%--%>simianarmy.janitor.rule.unusedImageRule.enabled = <%= scope[pfx + 'simianarmy_janitor_rule_unused_image_rule_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_unused_image_rule_last_reference_days_threshold'] != nil -%>
+  <%--%>simianarmy.janitor.rule.unusedImageRule.lastReferenceDaysThreshold = <%= scope[pfx + 'simianarmy_janitor_rule_unused_image_rule_last_reference_days_threshold'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_rule_unused_image_rule_retention_days'] != nil -%>
+  <%--%>simianarmy.janitor.rule.unusedImageRule.retentionDays = <%= scope[pfx + 'simianarmy_janitor_rule_unused_image_rule_retention_days'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_summary_email_to'] != nil -%>
+  <%--%>simianarmy.janitor.summaryEmail.to = <%= scope[pfx + 'simianarmy_janitor_summary_email_to'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_scheduler_frequency'] != nil -%>
+  <%--%>simianarmy.scheduler.frequency = <%= scope[pfx + 'simianarmy_scheduler_frequency'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_scheduler_frequency_unit'] != nil -%>
+  <%--%>simianarmy.scheduler.frequencyUnit = <%= scope[pfx + 'simianarmy_scheduler_frequency_unit'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_scheduler_threads'] != nil -%>
+  <%--%>simianarmy.scheduler.threads = <%= scope[pfx + 'simianarmy_scheduler_threads'] %>
+<%- end -%>

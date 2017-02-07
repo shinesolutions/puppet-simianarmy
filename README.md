@@ -1,22 +1,22 @@
-[![Build Status](https://img.shields.io/travis/shinesolutions/puppet-chaosmonkey1.svg)](http://travis-ci.org/shinesolutions/puppet-chaosmonkey1)
+[![Build Status](https://img.shields.io/travis/shinesolutions/puppet-simianarmy.svg)](http://travis-ci.org/shinesolutions/puppet-simianarmy)
 
-Puppet Chaos Monkey
--------------------
+Puppet Simian Army
+------------------
 
-A Puppet module for provisioning [Chaos Monkey](https://github.com/Netflix/SimianArmy/wiki/Chaos-Monkey) version 1.
+A Puppet module for provisioning [Netflix Simian Army](https://github.com/shinesolutions/simianarmy).
 
 Install
 -------
 
-    puppet module install shinesolutions-chaosmonkey1
+    puppet module install shinesolutions-simianarmy
 
 Or via a Puppetfile:
 
-    mod 'shinesolutions/chaosmonkey1'
+    mod 'shinesolutions/simianarmy'
 
 If you want to use the master version:
 
-    mod 'shinesolutions/chaosmonkey1', :git => 'https://github.com/shinesolutions/puppet-chaosmonkey1'
+    mod 'shinesolutions/simianarmy', :git => 'https://github.com/shinesolutions/puppet-simianarmy'
 
 Configuration
 -------------

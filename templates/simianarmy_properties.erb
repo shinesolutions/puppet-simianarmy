@@ -1,0 +1,22 @@
+<% pfx = 'simianarmy::simianarmy_properties::' -%>
+<%- if scope[pfx + 'simianarmy_calendar_close_hour'] != nil -%>
+  <%--%>simianarmy.calendar.closeHour = <%= scope[pfx + 'simianarmy_calendar_close_hour'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_calendar_open_hour'] != nil -%>
+  <%--%>simianarmy.calendar.openHour = <%= scope[pfx + 'simianarmy_calendar_open_hour'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_calendar_timezone'] != nil -%>
+  <%--%>simianarmy.calendar.timezone = <%= scope[pfx + 'simianarmy_calendar_timezone'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_recorder_sdb_domain'] != nil -%>
+  <%--%>simianarmy.recorder.sdb.domain = <%= scope[pfx + 'simianarmy_recorder_sdb_domain'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_scheduler_frequency'] != nil -%>
+  <%--%>simianarmy.scheduler.frequency = <%= scope[pfx + 'simianarmy_scheduler_frequency'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_scheduler_frequency_unit'] != nil -%>
+  <%--%>simianarmy.scheduler.frequencyUnit = <%= scope[pfx + 'simianarmy_scheduler_frequency_unit'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_scheduler_threads'] != nil -%>
+  <%--%>simianarmy.scheduler.threads = <%= scope[pfx + 'simianarmy_scheduler_threads'] %>
+<%- end -%>

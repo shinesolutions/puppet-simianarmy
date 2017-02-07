@@ -1,0 +1,73 @@
+<% pfx = 'simianarmy::chaos_properties::' -%>
+<%- if scope[pfx + 'simianarmy_chaos_asg_enabled'] != nil -%>
+  <%--%>simianarmy.chaos.ASG.enabled = <%= scope[pfx + 'simianarmy_chaos_asg_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_asg_max_terminations_per_day'] != nil -%>
+  <%--%>simianarmy.chaos.ASG.maxTerminationsPerDay = <%= scope[pfx + 'simianarmy_chaos_asg_max_terminations_per_day'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_asg_probability'] != nil -%>
+  <%--%>simianarmy.chaos.ASG.probability = <%= scope[pfx + 'simianarmy_chaos_asg_probability'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_blockallnetworktraffic_enabled'] != nil -%>
+  <%--%>simianarmy.chaos.blockallnetworktraffic.enabled = <%= scope[pfx + 'simianarmy_chaos_blockallnetworktraffic_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_burncpu_enabled'] != nil -%>
+  <%--%>simianarmy.chaos.burncpu.enabled = <%= scope[pfx + 'simianarmy_chaos_burncpu_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_burnio_enabled'] != nil -%>
+  <%--%>simianarmy.chaos.burnio.enabled = <%= scope[pfx + 'simianarmy_chaos_burnio_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_burnmoney'] != nil -%>
+  <%--%>simianarmy.chaos.burnmoney = <%= scope[pfx + 'simianarmy_chaos_burnmoney'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_detachvolumes_enabled'] != nil -%>
+  <%--%>simianarmy.chaos.detachvolumes.enabled = <%= scope[pfx + 'simianarmy_chaos_detachvolumes_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_enabled'] != nil -%>
+  <%--%>simianarmy.chaos.enabled = <%= scope[pfx + 'simianarmy_chaos_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_faildns_enabled'] != nil -%>
+  <%--%>simianarmy.chaos.faildns.enabled = <%= scope[pfx + 'simianarmy_chaos_faildns_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_faildynamodb_enabled'] != nil -%>
+  <%--%>simianarmy.chaos.faildynamodb.enabled = <%= scope[pfx + 'simianarmy_chaos_faildynamodb_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_failec2_enabled'] != nil -%>
+  <%--%>simianarmy.chaos.failec2.enabled = <%= scope[pfx + 'simianarmy_chaos_failec2_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_fails3_enabled'] != nil -%>
+  <%--%>simianarmy.chaos.fails3.enabled = <%= scope[pfx + 'simianarmy_chaos_fails3_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_filldisk_enabled'] != nil -%>
+  <%--%>simianarmy.chaos.filldisk.enabled = <%= scope[pfx + 'simianarmy_chaos_filldisk_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_killprocesses_enabled'] != nil -%>
+  <%--%>simianarmy.chaos.killprocesses.enabled = <%= scope[pfx + 'simianarmy_chaos_killprocesses_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_leashed'] != nil -%>
+  <%--%>simianarmy.chaos.leashed = <%= scope[pfx + 'simianarmy_chaos_leashed'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_mandatory_termination_default_probability'] != nil -%>
+  <%--%>simianarmy.chaos.mandatoryTermination.defaultProbability = <%= scope[pfx + 'simianarmy_chaos_mandatory_termination_default_probability'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_mandatory_termination_enabled'] != nil -%>
+  <%--%>simianarmy.chaos.mandatoryTermination.enabled = <%= scope[pfx + 'simianarmy_chaos_mandatory_termination_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_mandatory_termination_window_in_days'] != nil -%>
+  <%--%>simianarmy.chaos.mandatoryTermination.windowInDays = <%= scope[pfx + 'simianarmy_chaos_mandatory_termination_window_in_days'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_networkcorruption_enabled'] != nil -%>
+  <%--%>simianarmy.chaos.networkcorruption.enabled = <%= scope[pfx + 'simianarmy_chaos_networkcorruption_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_networklatency_enabled'] != nil -%>
+  <%--%>simianarmy.chaos.networklatency.enabled = <%= scope[pfx + 'simianarmy_chaos_networklatency_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_networkloss_enabled'] != nil -%>
+  <%--%>simianarmy.chaos.networkloss.enabled = <%= scope[pfx + 'simianarmy_chaos_networkloss_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_nullroute_enabled'] != nil -%>
+  <%--%>simianarmy.chaos.nullroute.enabled = <%= scope[pfx + 'simianarmy_chaos_nullroute_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_shutdowninstance_enabled'] != nil -%>
+  <%--%>simianarmy.chaos.shutdowninstance.enabled = <%= scope[pfx + 'simianarmy_chaos_shutdowninstance_enabled'] %>
+<%- end -%>

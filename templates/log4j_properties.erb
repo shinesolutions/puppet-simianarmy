@@ -1,0 +1,13 @@
+<% pfx = 'simianarmy::log4j_properties::' -%>
+<%- if scope[pfx + 'log4j_appender_stdout'] != nil -%>
+  <%--%>log4j.appender.stdout = <%= scope[pfx + 'log4j_appender_stdout'] %>
+<%- end -%>
+<%- if scope[pfx + 'log4j_appender_stdout_layout'] != nil -%>
+  <%--%>log4j.appender.stdout.layout = <%= scope[pfx + 'log4j_appender_stdout_layout'] %>
+<%- end -%>
+<%- if scope[pfx + 'log4j_appender_stdout_layout_conversion_pattern'] != nil -%>
+  <%--%>log4j.appender.stdout.layout.ConversionPattern = <%= scope[pfx + 'log4j_appender_stdout_layout_conversion_pattern'] %>
+<%- end -%>
+<%- if scope[pfx + 'log4j_root_logger'] != nil -%>
+  <%--%>log4j.rootLogger = <%= scope[pfx + 'log4j_root_logger'] %>
+<%- end -%>

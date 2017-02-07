@@ -1,0 +1,70 @@
+<% pfx = 'simianarmy::conformity_properties::' -%>
+<%- if scope[pfx + 'simianarmy_calendar_close_hour'] != nil -%>
+  <%--%>simianarmy.calendar.closeHour = <%= scope[pfx + 'simianarmy_calendar_close_hour'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_calendar_open_hour'] != nil -%>
+  <%--%>simianarmy.calendar.openHour = <%= scope[pfx + 'simianarmy_calendar_open_hour'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_calendar_timezone'] != nil -%>
+  <%--%>simianarmy.calendar.timezone = <%= scope[pfx + 'simianarmy_calendar_timezone'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_conformity_eureka_enabled'] != nil -%>
+  <%--%>simianarmy.conformity.Eureka.enabled = <%= scope[pfx + 'simianarmy_conformity_eureka_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_conformity_enabled'] != nil -%>
+  <%--%>simianarmy.conformity.enabled = <%= scope[pfx + 'simianarmy_conformity_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_conformity_leashed'] != nil -%>
+  <%--%>simianarmy.conformity.leashed = <%= scope[pfx + 'simianarmy_conformity_leashed'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_conformity_notification_close_hour'] != nil -%>
+  <%--%>simianarmy.conformity.notification.closeHour = <%= scope[pfx + 'simianarmy_conformity_notification_close_hour'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_conformity_notification_default_email'] != nil -%>
+  <%--%>simianarmy.conformity.notification.defaultEmail = <%= scope[pfx + 'simianarmy_conformity_notification_default_email'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_conformity_notification_open_hour'] != nil -%>
+  <%--%>simianarmy.conformity.notification.openHour = <%= scope[pfx + 'simianarmy_conformity_notification_open_hour'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_conformity_notification_source_email'] != nil -%>
+  <%--%>simianarmy.conformity.notification.sourceEmail = <%= scope[pfx + 'simianarmy_conformity_notification_source_email'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_conformity_rule_instance_has_health_check_url_enabled'] != nil -%>
+  <%--%>simianarmy.conformity.rule.InstanceHasHealthCheckUrl.enabled = <%= scope[pfx + 'simianarmy_conformity_rule_instance_has_health_check_url_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_conformity_rule_instance_has_status_url_enabled'] != nil -%>
+  <%--%>simianarmy.conformity.rule.InstanceHasStatusUrl.enabled = <%= scope[pfx + 'simianarmy_conformity_rule_instance_has_status_url_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_conformity_rule_instance_in_security_group_enabled'] != nil -%>
+  <%--%>simianarmy.conformity.rule.InstanceInSecurityGroup.enabled = <%= scope[pfx + 'simianarmy_conformity_rule_instance_in_security_group_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_conformity_rule_instance_in_security_group_required_security_groups'] != nil -%>
+  <%--%>simianarmy.conformity.rule.InstanceInSecurityGroup.requiredSecurityGroups = <%= scope[pfx + 'simianarmy_conformity_rule_instance_in_security_group_required_security_groups'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_conformity_rule_instance_is_healthy_in_eureka_enabled'] != nil -%>
+  <%--%>simianarmy.conformity.rule.InstanceIsHealthyInEureka.enabled = <%= scope[pfx + 'simianarmy_conformity_rule_instance_is_healthy_in_eureka_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_conformity_rule_instance_too_old_enabled'] != nil -%>
+  <%--%>simianarmy.conformity.rule.InstanceTooOld.enabled = <%= scope[pfx + 'simianarmy_conformity_rule_instance_too_old_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_conformity_rule_instance_too_old_instance_age_threshold'] != nil -%>
+  <%--%>simianarmy.conformity.rule.InstanceTooOld.instanceAgeThreshold = <%= scope[pfx + 'simianarmy_conformity_rule_instance_too_old_instance_age_threshold'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_conformity_rule_same_zones_in_elb_and_asg_enabled'] != nil -%>
+  <%--%>simianarmy.conformity.rule.SameZonesInElbAndAsg.enabled = <%= scope[pfx + 'simianarmy_conformity_rule_same_zones_in_elb_and_asg_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_conformity_sdb_domain'] != nil -%>
+  <%--%>simianarmy.conformity.sdb.domain = <%= scope[pfx + 'simianarmy_conformity_sdb_domain'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_conformity_summary_email_to'] != nil -%>
+  <%--%>simianarmy.conformity.summaryEmail.to = <%= scope[pfx + 'simianarmy_conformity_summary_email_to'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_scheduler_frequency'] != nil -%>
+  <%--%>simianarmy.scheduler.frequency = <%= scope[pfx + 'simianarmy_scheduler_frequency'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_scheduler_frequency_unit'] != nil -%>
+  <%--%>simianarmy.scheduler.frequencyUnit = <%= scope[pfx + 'simianarmy_scheduler_frequency_unit'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_scheduler_threads'] != nil -%>
+  <%--%>simianarmy.scheduler.threads = <%= scope[pfx + 'simianarmy_scheduler_threads'] %>
+<%- end -%>
