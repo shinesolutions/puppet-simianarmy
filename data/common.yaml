@@ -39,6 +39,7 @@ simianarmy::log4j_properties::path: "%{hiera('simianarmy::properties_dir')}/log4
 simianarmy::log4j_properties::owner: "%{hiera('simianarmy::user')}"
 simianarmy::log4j_properties::group: "%{hiera('simianarmy::group')}"
 simianarmy::log4j_properties::mode: "0440"
+simianarmy::log4j_properties::log_file_name: "%{hiera('simianarmy::service_name')}"
 
 simianarmy::simianarmy_properties::path: "%{hiera('simianarmy::properties_dir')}/simianarmy.properties"
 simianarmy::simianarmy_properties::owner: "%{hiera('simianarmy::user')}"

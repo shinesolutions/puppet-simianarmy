@@ -10,7 +10,6 @@ log4j.appender.dailyRolling = org.apache.log4j.DailyRollingFileAppender
 log4j.appender.dailyRolling.layout = org.apache.log4j.PatternLayout
 log4j.appender.dailyRolling.layout.ConversionPattern = %d{yyyy-MM-dd HH:mm:ss.SSS} - %-5p %C{1} - [%F:%L] %m%n
 log4j.appender.dailyRolling.DatePattern = '.'yyyy-MM-dd
-log4j.appender.dailyRolling.File = ${catalina.base}/logs/<%= scope['::simianarmy::service_name'] %>.log
+log4j.appender.dailyRolling.File = ${catalina.base}/logs/<%= scope['::simianarmy::log4j_properties::log_file_name'] %>.log
 log4j.appender.dailyRolling.append = true
 log4j.appender.dailyRolling.threshold = <%= scope['::simianarmy::log4j_properties::daily_rolling_threshold'] %>
-

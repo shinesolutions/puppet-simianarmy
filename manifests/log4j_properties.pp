@@ -18,6 +18,10 @@
 # [*mode*]
 #   The mode of the application.properties file. Passed to the `file` resource.
 #
+# [*log_file_name*]
+#   The name for the daily rotating log file. Default is taken from the parent
+#   class' `service_name` parameter.
+#
 # [*stdout_threshold*]
 #   Logging threshold for the console logger. Default: WARN
 #
@@ -42,10 +46,10 @@ class simianarmy::log4j_properties (
   $owner,
   $group,
   $mode,
+  $log_file_name,
 
   $stdout_threshold = 'WARN',
   $daily_rolling_threshold = 'INFO',
-
 ) {
   file { $path:
     ensure  => file,

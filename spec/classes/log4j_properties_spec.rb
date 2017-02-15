@@ -5,6 +5,7 @@ describe 'simianarmy::log4j_properties' do
     it {
       is_expected.to contain_file('/var/lib/tomcat/webapps/simianarmy/WEB-INF/classes/log4j.properties')
         .with_content(/^log4j.appender.stdout.threshold = WARN/)
+        .with_content(/^log4j.appender.dailyRolling.File = \${catalina.base}\/logs\/simianarmy.log/)
         .with_content(/^log4j.appender.dailyRolling.threshold = INFO/)
     }
   end
