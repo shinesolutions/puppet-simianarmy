@@ -10,7 +10,6 @@ describe 'simianarmy' do
     it { is_expected.to contain_class('simianarmy::log4j_properties') }
     it { is_expected.to contain_class('simianarmy::simianarmy_properties') }
     it { is_expected.to contain_package('tomcat') }
-    #it { is_expected.to contain_package('tomcat-admin-webapps') }
     it { is_expected.to contain_file('/opt/netflix') }
     it { is_expected.to contain_archive('/opt/netflix/simianarmy/simianarmy.war') }
     it { is_expected.to contain_file('/opt/netflix/simianarmy/simianarmy.war') }
