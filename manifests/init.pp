@@ -129,17 +129,28 @@ class simianarmy (
     $file_requires = [ User[$user] ]
   }
 
-  package { [ 'tomcat', 'tomcat-admin-webapps' ]:
-    ensure => latest,
-  }
+  $warfile = "${homedir}/${service_name}.war"
+  $webapp_path = "${installdir}/${service_name}"
 
-  $warfile = "${installdir}/simianarmy.war"
+  package { [ 'tomcat' ]:
+    ensure => latest,
+  } ->
+  file { $webapp_path:
+    ensure => directory,
+    owner  => $user,
+    group  => 'tomcat',
+    mode   => '0750',
+  } ->
   archive { $warfile:
     ensure        => present,
     source        => $warfile_source,
+    extract       => true,
+    extract_path  => $webapp_path,
+    creates       => "${webapp_path}/WEB-INF",
+    user          => $user,
+    group         => 'tomcat',
     checksum_type => $warfile_checksum_type,
     checksum      => $warfile_checksum_value,
-    require       => $file_requires;
   } ->
   file { $warfile:
     owner => $user,
@@ -157,9 +168,8 @@ class simianarmy (
       '::simianarmy::volume_tagging_properties',
     ]:
       owner => $user,
-      group => $group,
-  }
-
+      group => 'tomcat',
+  } ->
   service { 'tomcat':
     ensure => running,
     enable => true,

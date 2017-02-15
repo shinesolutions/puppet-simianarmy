@@ -27,7 +27,7 @@ RSpec.configure do |c|
       on host, puppet('module', 'install', 'puppetlabs-java'), acceptable_exit_codes: [0, 1]
       on host, puppet('module', 'install', 'puppet-archive'), acceptable_exit_codes: [0, 1]
       apply_manifest('class { "java": distribution => "jre" }')
-      apply_manifest('package { "tree": ensure => present }')
+      apply_manifest('package { [ "tree", "unzip" ]: ensure => present }')
     end
   end
 end

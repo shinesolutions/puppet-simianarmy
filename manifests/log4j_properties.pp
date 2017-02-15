@@ -18,17 +18,11 @@
 # [*mode*]
 #   The mode of the application.properties file. Passed to the `file` resource.
 #
-# [*log4j_appender_stdout*]
-#   Java property `log4j.appender.stdout`
+# [*stdout_threshold*]
+#   Logging threshold for the console logger. Default: WARN
 #
-# [*log4j_appender_stdout_layout*]
-#   Java property `log4j.appender.stdout.layout`
-#
-# [*log4j_appender_stdout_layout_conversion_pattern*]
-#   Java property `log4j.appender.stdout.layout.ConversionPattern`
-#
-# [*log4j_root_logger*]
-#   Java property `log4j.rootLogger`
+# [*daily_rolling_threshold*]
+#   Logging threshold for the daily rotating logger. Default: INFO
 #
 # === Examples
 #
@@ -37,7 +31,7 @@
 #
 # === Authors
 #
-# This is an auto-generated class.
+# James Sinclair <james.sinclair@shinesolutions.com>
 #
 # === Copyright
 #
@@ -49,10 +43,8 @@ class simianarmy::log4j_properties (
   $group,
   $mode,
 
-  $log4j_appender_stdout = undef,
-  $log4j_appender_stdout_layout = undef,
-  $log4j_appender_stdout_layout_conversion_pattern = undef,
-  $log4j_root_logger = undef,
+  $stdout_threshold = 'WARN',
+  $daily_rolling_threshold = 'INFO',
 
 ) {
   file { $path:

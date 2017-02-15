@@ -10,17 +10,18 @@ describe 'simianarmy' do
     it { is_expected.to contain_class('simianarmy::log4j_properties') }
     it { is_expected.to contain_class('simianarmy::simianarmy_properties') }
     it { is_expected.to contain_package('tomcat') }
-    it { is_expected.to contain_package('tomcat-admin-webapps') }
+    #it { is_expected.to contain_package('tomcat-admin-webapps') }
     it { is_expected.to contain_file('/opt/netflix') }
     it { is_expected.to contain_archive('/opt/netflix/simianarmy/simianarmy.war') }
     it { is_expected.to contain_file('/opt/netflix/simianarmy/simianarmy.war') }
-    it { is_expected.to contain_file('/opt/netflix/simianarmy/chaos.properties') }
-    it { is_expected.to contain_file('/opt/netflix/simianarmy/client.properties') }
-    it { is_expected.to contain_file('/opt/netflix/simianarmy/conformity.properties') }
-    it { is_expected.to contain_file('/opt/netflix/simianarmy/janitor.properties') }
-    it { is_expected.to contain_file('/opt/netflix/simianarmy/log4j.properties') }
-    it { is_expected.to contain_file('/opt/netflix/simianarmy/simianarmy.properties') }
-    it { is_expected.to contain_file('/opt/netflix/simianarmy/volumeTagging.properties') }
+    it { is_expected.to contain_file('/var/lib/tomcat/webapps/simianarmy') }
+    it { is_expected.to contain_file('/var/lib/tomcat/webapps/simianarmy/WEB-INF/classes/chaos.properties') }
+    it { is_expected.to contain_file('/var/lib/tomcat/webapps/simianarmy/WEB-INF/classes/client.properties') }
+    it { is_expected.to contain_file('/var/lib/tomcat/webapps/simianarmy/WEB-INF/classes/conformity.properties') }
+    it { is_expected.to contain_file('/var/lib/tomcat/webapps/simianarmy/WEB-INF/classes/janitor.properties') }
+    it { is_expected.to contain_file('/var/lib/tomcat/webapps/simianarmy/WEB-INF/classes/log4j.properties') }
+    it { is_expected.to contain_file('/var/lib/tomcat/webapps/simianarmy/WEB-INF/classes/simianarmy.properties') }
+    it { is_expected.to contain_file('/var/lib/tomcat/webapps/simianarmy/WEB-INF/classes/volumeTagging.properties') }
     it { is_expected.to contain_user('simianarmy') }
     it { is_expected.to contain_group('simianarmy') }
     it { is_expected.to contain_service('tomcat') }

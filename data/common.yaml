@@ -1,45 +1,46 @@
 ---
 simianarmy::service_name: simianarmy
 simianarmy::basedir: /opt/netflix
-simianarmy::installdir: "%{hiera('simianarmy::basedir')}/%{hiera('simianarmy::service_name')}"
-simianarmy::homedir: "%{hiera('simianarmy::installdir')}"
+simianarmy::installdir: /var/lib/tomcat/webapps
+simianarmy::properties_dir: "%{hiera('simianarmy::installdir')}/%{hiera('simianarmy::service_name')}/WEB-INF/classes"
+simianarmy::homedir: "%{hiera('simianarmy::basedir')}/%{hiera('simianarmy::service_name')}"
 simianarmy::user: "%{hiera('simianarmy::service_name')}"
 simianarmy::group: "%{hiera('simianarmy::service_name')}"
 simianarmy::warfile_source: https://dl.bintray.com/netflixoss/maven/com/netflix/simianarmy/simianarmy/2.5.3/simianarmy-2.5.3.war
 simianarmy::warfile_checksum_value: 3f6f19c0d95b8f40930e6a134f42facc19bced3b1523552dbb583866b4db4dd5
 simianarmy::warfile_mode: "0400"
 
-simianarmy::chaos_properties::path: "%{hiera('simianarmy::installdir')}/chaos.properties"
+simianarmy::chaos_properties::path: "%{hiera('simianarmy::properties_dir')}/chaos.properties"
 simianarmy::chaos_properties::owner: "%{hiera('simianarmy::user')}"
 simianarmy::chaos_properties::group: "%{hiera('simianarmy::group')}"
-simianarmy::chaos_properties::mode : "0400"
+simianarmy::chaos_properties::mode : "0440"
 
-simianarmy::client_properties::path: "%{hiera('simianarmy::installdir')}/client.properties"
+simianarmy::client_properties::path: "%{hiera('simianarmy::properties_dir')}/client.properties"
 simianarmy::client_properties::owner: "%{hiera('simianarmy::user')}"
 simianarmy::client_properties::group: "%{hiera('simianarmy::group')}"
-simianarmy::client_properties::mode : "0400"
+simianarmy::client_properties::mode : "0440"
 
-simianarmy::conformity_properties::path: "%{hiera('simianarmy::installdir')}/conformity.properties"
+simianarmy::conformity_properties::path: "%{hiera('simianarmy::properties_dir')}/conformity.properties"
 simianarmy::conformity_properties::owner: "%{hiera('simianarmy::user')}"
 simianarmy::conformity_properties::group: "%{hiera('simianarmy::group')}"
-simianarmy::conformity_properties::mode : "0400"
+simianarmy::conformity_properties::mode : "0440"
 
-simianarmy::volume_tagging_properties::path: "%{hiera('simianarmy::installdir')}/volumeTagging.properties"
+simianarmy::volume_tagging_properties::path: "%{hiera('simianarmy::properties_dir')}/volumeTagging.properties"
 simianarmy::volume_tagging_properties::owner: "%{hiera('simianarmy::user')}"
 simianarmy::volume_tagging_properties::group: "%{hiera('simianarmy::group')}"
-simianarmy::volume_tagging_properties::mode : "0400"
+simianarmy::volume_tagging_properties::mode : "0440"
 
-simianarmy::janitor_properties::path: "%{hiera('simianarmy::installdir')}/janitor.properties"
+simianarmy::janitor_properties::path: "%{hiera('simianarmy::properties_dir')}/janitor.properties"
 simianarmy::janitor_properties::owner: "%{hiera('simianarmy::user')}"
 simianarmy::janitor_properties::group: "%{hiera('simianarmy::group')}"
-simianarmy::janitor_properties::mode : "0400"
+simianarmy::janitor_properties::mode : "0440"
 
-simianarmy::log4j_properties::path: "%{hiera('simianarmy::installdir')}/log4j.properties"
+simianarmy::log4j_properties::path: "%{hiera('simianarmy::properties_dir')}/log4j.properties"
 simianarmy::log4j_properties::owner: "%{hiera('simianarmy::user')}"
 simianarmy::log4j_properties::group: "%{hiera('simianarmy::group')}"
-simianarmy::log4j_properties::mode : "0400"
+simianarmy::log4j_properties::mode : "0440"
 
-simianarmy::simianarmy_properties::path: "%{hiera('simianarmy::installdir')}/simianarmy.properties"
+simianarmy::simianarmy_properties::path: "%{hiera('simianarmy::properties_dir')}/simianarmy.properties"
 simianarmy::simianarmy_properties::owner: "%{hiera('simianarmy::user')}"
 simianarmy::simianarmy_properties::group: "%{hiera('simianarmy::group')}"
-simianarmy::simianarmy_properties::mode : "0400"
+simianarmy::simianarmy_properties::mode : "0440"
