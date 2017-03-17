@@ -28,29 +28,29 @@ def parse_args():
     )
     p.add_argument(
         '--class-name', '-n',
-        default = 'application_properties',
+        default = None,
         help    = unwrap("""
-            The name of the generated class. Defaults to
-            `application_properties`.
+            The name of the generated class. Default is based on the example
+            file name.
         """),
     )
     p.add_argument(
         '--class-file', '-f',
-        default = 'manifests/application_properties.pp',
+        default = None,
         help    = unwrap("""
             The Puppet file to write to.
         """),
     )
     p.add_argument(
         '--template-file', '-t',
-        default = 'templates/application_properties.erb',
+        default = None,
         help    = unwrap("""
             The ERB template file to write to.
         """),
     )
     p.add_argument(
         '--spec-file', '-s',
-        default = 'spec/classes/application_properties_spec.rb',
+        default = None,
         help    = unwrap("""
             The Ruby spec file to write to.
         """),
@@ -80,6 +80,20 @@ def parse_args():
     )
 
     args = p.parse_args()
+
+    if args.class_name is None:
+        if args.file == '-':
+            sys.stderr.write('You must provide a class name (--class-name) when example file is stdin.\n')
+            raise SystemExit(1)
+        else:
+            args.class_name = os.path.basename(args.file).replace('.', '_')
+    if args.class_file is None:
+        args.class_file = 'manifests/{0}.pp'.format(args.class_name)
+    if args.template_file is None:
+        args.template_file = 'templates/{0}.erb'.format(args.class_name)
+    if args.spec_file is None:
+        args.spec_file = 'spec/classes/{0}_spec.rb'.format(args.class_name)
+    sys.stderr.write('%r\n'%args)
     return args
 
 class property_key(object):
@@ -99,6 +113,13 @@ class property_key(object):
     @property
     def doco(self):
         return 'Java property `{0}`'.format(self.key)
+
+def parse_example_file(file):
+    keys = []
+    for key in sorted(javaproperties.load(file).keys()):
+        keys.append(property_key(key, full_class_name, acronyms = args.acronym))
+    return keys
+
 
 template_tmpl = Template(
     textwrap.dedent(u"""\
@@ -209,9 +230,11 @@ if __name__ == '__main__':
         full_class_name = args.class_prefix.strip(':') + '::' + full_class_name
 
     keys = []
-    with open(args.file) as properties_file:
-        for key in sorted(javaproperties.load(properties_file).keys()):
-            keys.append(property_key(key, full_class_name, acronyms = args.acronym))
+    if args.file == '-':
+        keys = parse_example_file(sys.stdin)
+    else:
+        with open(args.file) as properties_file:
+            keys = parse_example_file(properties_file)
 
     with open(args.template_file, 'w') as template_file:
         template_file.write(template_tmpl.render(
