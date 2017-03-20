@@ -18,15 +18,6 @@
 # [*mode*]
 #   The mode of the application.properties file. Passed to the `file` resource.
 #
-# [*simianarmy_chaos_asg_enabled*]
-#   Java property `simianarmy.chaos.ASG.enabled`
-#
-# [*simianarmy_chaos_asg_max_terminations_per_day*]
-#   Java property `simianarmy.chaos.ASG.maxTerminationsPerDay`
-#
-# [*simianarmy_chaos_asg_probability*]
-#   Java property `simianarmy.chaos.ASG.probability`
-#
 # [*simianarmy_chaos_blockallnetworktraffic_enabled*]
 #   Java property `simianarmy.chaos.blockallnetworktraffic.enabled`
 #
@@ -84,11 +75,38 @@
 # [*simianarmy_chaos_networkloss_enabled*]
 #   Java property `simianarmy.chaos.networkloss.enabled`
 #
+# [*simianarmy_chaos_notification_body_prefix*]
+#   Java property `simianarmy.chaos.notification.body.prefix`
+#
+# [*simianarmy_chaos_notification_body_suffix*]
+#   Java property `simianarmy.chaos.notification.body.suffix`
+#
+# [*simianarmy_chaos_notification_global_enabled*]
+#   Java property `simianarmy.chaos.notification.global.enabled`
+#
+# [*simianarmy_chaos_notification_global_receiver_email*]
+#   Java property `simianarmy.chaos.notification.global.receiverEmail`
+#
+# [*simianarmy_chaos_notification_source_email*]
+#   Java property `simianarmy.chaos.notification.sourceEmail`
+#
+# [*simianarmy_chaos_notification_subject_is_body*]
+#   Java property `simianarmy.chaos.notification.subject.isBody`
+#
+# [*simianarmy_chaos_notification_subject_prefix*]
+#   Java property `simianarmy.chaos.notification.subject.prefix`
+#
+# [*simianarmy_chaos_notification_subject_suffix*]
+#   Java property `simianarmy.chaos.notification.subject.suffix`
+#
 # [*simianarmy_chaos_nullroute_enabled*]
 #   Java property `simianarmy.chaos.nullroute.enabled`
 #
 # [*simianarmy_chaos_shutdowninstance_enabled*]
 #   Java property `simianarmy.chaos.shutdowninstance.enabled`
+#
+# [*simianarmy_client_chaos_class*]
+#   Java property `simianarmy.client.chaos.class`
 #
 # === Examples
 #
@@ -109,9 +127,6 @@ class simianarmy::chaos_properties (
   $group,
   $mode,
 
-  $simianarmy_chaos_asg_enabled = undef,
-  $simianarmy_chaos_asg_max_terminations_per_day = undef,
-  $simianarmy_chaos_asg_probability = undef,
   $simianarmy_chaos_blockallnetworktraffic_enabled = undef,
   $simianarmy_chaos_burncpu_enabled = undef,
   $simianarmy_chaos_burnio_enabled = undef,
@@ -131,8 +146,17 @@ class simianarmy::chaos_properties (
   $simianarmy_chaos_networkcorruption_enabled = undef,
   $simianarmy_chaos_networklatency_enabled = undef,
   $simianarmy_chaos_networkloss_enabled = undef,
+  $simianarmy_chaos_notification_body_prefix = undef,
+  $simianarmy_chaos_notification_body_suffix = undef,
+  $simianarmy_chaos_notification_global_enabled = undef,
+  $simianarmy_chaos_notification_global_receiver_email = undef,
+  $simianarmy_chaos_notification_source_email = undef,
+  $simianarmy_chaos_notification_subject_is_body = undef,
+  $simianarmy_chaos_notification_subject_prefix = undef,
+  $simianarmy_chaos_notification_subject_suffix = undef,
   $simianarmy_chaos_nullroute_enabled = undef,
   $simianarmy_chaos_shutdowninstance_enabled = undef,
+  $simianarmy_client_chaos_class = undef,
 
 ) {
   file { $path:

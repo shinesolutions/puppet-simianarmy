@@ -1,13 +1,4 @@
 <% pfx = 'simianarmy::chaos_properties::' -%>
-<%- if scope[pfx + 'simianarmy_chaos_asg_enabled'] != nil -%>
-  <%--%>simianarmy.chaos.ASG.enabled = <%= scope[pfx + 'simianarmy_chaos_asg_enabled'] %>
-<%- end -%>
-<%- if scope[pfx + 'simianarmy_chaos_asg_max_terminations_per_day'] != nil -%>
-  <%--%>simianarmy.chaos.ASG.maxTerminationsPerDay = <%= scope[pfx + 'simianarmy_chaos_asg_max_terminations_per_day'] %>
-<%- end -%>
-<%- if scope[pfx + 'simianarmy_chaos_asg_probability'] != nil -%>
-  <%--%>simianarmy.chaos.ASG.probability = <%= scope[pfx + 'simianarmy_chaos_asg_probability'] %>
-<%- end -%>
 <%- if scope[pfx + 'simianarmy_chaos_blockallnetworktraffic_enabled'] != nil -%>
   <%--%>simianarmy.chaos.blockallnetworktraffic.enabled = <%= scope[pfx + 'simianarmy_chaos_blockallnetworktraffic_enabled'] %>
 <%- end -%>
@@ -65,9 +56,36 @@
 <%- if scope[pfx + 'simianarmy_chaos_networkloss_enabled'] != nil -%>
   <%--%>simianarmy.chaos.networkloss.enabled = <%= scope[pfx + 'simianarmy_chaos_networkloss_enabled'] %>
 <%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_notification_body_prefix'] != nil -%>
+  <%--%>simianarmy.chaos.notification.body.prefix = <%= scope[pfx + 'simianarmy_chaos_notification_body_prefix'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_notification_body_suffix'] != nil -%>
+  <%--%>simianarmy.chaos.notification.body.suffix = <%= scope[pfx + 'simianarmy_chaos_notification_body_suffix'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_notification_global_enabled'] != nil -%>
+  <%--%>simianarmy.chaos.notification.global.enabled = <%= scope[pfx + 'simianarmy_chaos_notification_global_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_notification_global_receiver_email'] != nil -%>
+  <%--%>simianarmy.chaos.notification.global.receiverEmail = <%= scope[pfx + 'simianarmy_chaos_notification_global_receiver_email'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_notification_source_email'] != nil -%>
+  <%--%>simianarmy.chaos.notification.sourceEmail = <%= scope[pfx + 'simianarmy_chaos_notification_source_email'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_notification_subject_is_body'] != nil -%>
+  <%--%>simianarmy.chaos.notification.subject.isBody = <%= scope[pfx + 'simianarmy_chaos_notification_subject_is_body'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_notification_subject_prefix'] != nil -%>
+  <%--%>simianarmy.chaos.notification.subject.prefix = <%= scope[pfx + 'simianarmy_chaos_notification_subject_prefix'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_notification_subject_suffix'] != nil -%>
+  <%--%>simianarmy.chaos.notification.subject.suffix = <%= scope[pfx + 'simianarmy_chaos_notification_subject_suffix'] %>
+<%- end -%>
 <%- if scope[pfx + 'simianarmy_chaos_nullroute_enabled'] != nil -%>
   <%--%>simianarmy.chaos.nullroute.enabled = <%= scope[pfx + 'simianarmy_chaos_nullroute_enabled'] %>
 <%- end -%>
 <%- if scope[pfx + 'simianarmy_chaos_shutdowninstance_enabled'] != nil -%>
   <%--%>simianarmy.chaos.shutdowninstance.enabled = <%= scope[pfx + 'simianarmy_chaos_shutdowninstance_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_client_chaos_class'] != nil -%>
+  <%--%>simianarmy.client.chaos.class = <%= scope[pfx + 'simianarmy_client_chaos_class'] %>
 <%- end -%>
