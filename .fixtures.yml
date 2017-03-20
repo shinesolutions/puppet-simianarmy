@@ -2,5 +2,8 @@
 fixtures:
   forge_modules:
     archive: "puppet/archive"
+    stdlib:
+      repo: "puppetlabs/stdlib"
+      ref: "4.x"
   symlinks:
     simianarmy: "#{source_dir}"
