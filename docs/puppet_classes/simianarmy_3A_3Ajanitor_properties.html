@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Puppet Class: simianarmy::janitor_properties
+  
+    &mdash; Documentation by YARD 0.9.8
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "puppet_classes::simianarmy::janitor_properties";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../puppet_class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (s)</a> &raquo;
+    <span class='title'><span class='object_link'>Puppet Classes</span></span>
+     &raquo; 
+    <span class="title">simianarmy::janitor_properties</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="puppet_class_list_link"
+        href="../puppet_class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Puppet Class: simianarmy::janitor_properties</h1>
+<div class="box_info">
+  
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>
+      manifests/janitor_properties.pp
+    </dd>
+  </dl>
+</div>
+
+  <h2>Summary</h2>
+  Write the `janitor.properties` file.
+
+<h2>Overview</h2>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>This class writes the <code>janitor.properties</code> file for the Netflix
+Chaos  Monkey. It is auto-generated and should not be modified by hand. 
+Documentation for each of the properties can be found in the example 
+<code>janitor.properties</code> from which it is generated. (see below)</p>
+
+<p><em>Note:</em> This is an internal class that shouldn&#39;t be used
+directly. It is  included by the <code>simianarmy</code> class. You can
+change values for it&#39;s  parameters using Hiera.</p>
+
+<p>Copyright © 2017 Shine Solutions Group, unless otherwise noted.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>path</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The path to the janitor.properties file on disk. Required.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>owner</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The user that should own the janitor.properties file. This user is
+<em>not</em> created by this module and should be managed elsewhere.
+Required.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>group</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The group that should own the janitor.properties file. This group is
+<em>not</em> created by this module and should be managed elsewhere.
+Required.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>mode</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The mode of the janitor.properties file. Passed to the <code>file</code>
+resource.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_calendar_close_hour</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.calendar.closeHour</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_calendar_is_monkey_time</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.calendar.isMonkeyTime</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_calendar_open_hour</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.calendar.openHour</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_calendar_timezone</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.calendar.timezone</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_eureka_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.janitor.Eureka.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_edda_client_retries</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.janitor.edda.client.retries</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_edda_client_retry_interval</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.janitor.edda.client.retryInterval</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_edda_client_timeout</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.janitor.edda.client.timeout</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_edda_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.janitor.edda.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_edda_endpoint_us_east_1</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.janitor.edda.endpoint.us-east-1</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.janitor.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_enabled_resources</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.janitor.enabledResources</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_image_crawler_look_back_days</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.janitor.image.crawler.lookBackDays</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_image_owner_id</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.janitor.image.ownerId</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_leashed</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.janitor.leashed</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_notification_days_before_termination</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.notification.daysBeforeTermination</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_notification_default_email</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.janitor.notification.defaultEmail</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_notification_owner_email_domain</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.janitor.notification.ownerEmailDomain</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_notification_source_email</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.janitor.notification.sourceEmail</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_resources_sdb_domain</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.janitor.resources.sdb.domain</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_delete_on_termination_rule_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.deleteOnTerminationRule.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_delete_on_termination_rule_retention_days</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.deleteOnTerminationRule.retentionDays</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_no_generated_ami_rule_age_threshold</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.noGeneratedAMIRule.ageThreshold</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_no_generated_ami_rule_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.noGeneratedAMIRule.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_no_generated_ami_rule_retention_days</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.noGeneratedAMIRule.retentionDays</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_old_detached_volume_rule_detach_days_threshold</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.oldDetachedVolumeRule.detachDaysThreshold</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_old_detached_volume_rule_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.oldDetachedVolumeRule.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_old_detached_volume_rule_retention_days</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.oldDetachedVolumeRule.retentionDays</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_old_empty_asg_rule_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.janitor.rule.oldEmptyASGRule.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_old_empty_asg_rule_launch_config_age_threshold</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.oldEmptyASGRule.launchConfigAgeThreshold</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_old_empty_asg_rule_retention_days</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.oldEmptyASGRule.retentionDays</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_old_unused_launch_config_rule_age_threshold</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.oldUnusedLaunchConfigRule.ageThreshold</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_old_unused_launch_config_rule_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.oldUnusedLaunchConfigRule.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_old_unused_launch_config_rule_retention_days</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.oldUnusedLaunchConfigRule.retentionDays</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_orphaned_instance_rule_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.orphanedInstanceRule.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_orphaned_instance_rule_instance_age_threshold</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.orphanedInstanceRule.instanceAgeThreshold</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_orphaned_instance_rule_opsworks_parentage</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.orphanedInstanceRule.opsworks.parentage</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_orphaned_instance_rule_retention_days_with_owner</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.orphanedInstanceRule.retentionDaysWithOwner</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_orphaned_instance_rule_retention_days_without_owner</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.orphanedInstanceRule.retentionDaysWithoutOwner</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_suspended_asg_rule_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.janitor.rule.suspendedASGRule.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_suspended_asg_rule_retention_days</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.suspendedASGRule.retentionDays</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_suspended_asg_rule_suspension_age_threshold</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.suspendedASGRule.suspensionAgeThreshold</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_untagged_rule_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.janitor.rule.untaggedRule.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_untagged_rule_required_tags</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.untaggedRule.requiredTags</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_untagged_rule_resources</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.janitor.rule.untaggedRule.resources</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_untagged_rule_retention_days_with_owner</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.untaggedRule.retentionDaysWithOwner</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_untagged_rule_retention_days_without_owner</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.untaggedRule.retentionDaysWithoutOwner</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_unused_image_rule_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.janitor.rule.unusedImageRule.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_unused_image_rule_last_reference_days_threshold</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.unusedImageRule.lastReferenceDaysThreshold</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_rule_unused_image_rule_retention_days</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.janitor.rule.unusedImageRule.retentionDays</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_snapshots_owner_id</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.janitor.snapshots.ownerId</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_janitor_summary_email_to</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.janitor.summaryEmail.to</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_scheduler_frequency</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.scheduler.frequency</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_scheduler_frequency_unit</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.scheduler.frequencyUnit</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_scheduler_threads</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.scheduler.threads</code></p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="https://github.com/Netflix/SimianArmy/blob/master/src/main/resources/janitor.properties" target="_parent" title="The example `janitor.properties` file.">The example `janitor.properties` file.</a></li>
+    
+  </ul>
+
+</div><div class="method_details_list">
+  <table class="source_code">
+    <tr>
+      <td>
+        <pre class="lines">
+
+
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268</pre>
+      </td>
+      <td>
+        <pre class="code"><span class="info file"># File 'manifests/janitor_properties.pp', line 198</span>
+
+class simianarmy::janitor_properties (
+  String $path,
+  String $owner,
+  String $group,
+  String $mode,
+
+  Variant[String, Undef] $simianarmy_calendar_close_hour = undef,
+  Variant[String, Undef] $simianarmy_calendar_is_monkey_time = undef,
+  Variant[String, Undef] $simianarmy_calendar_open_hour = undef,
+  Variant[String, Undef] $simianarmy_calendar_timezone = undef,
+  Variant[String, Undef] $simianarmy_janitor_eureka_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_edda_client_retries = undef,
+  Variant[String, Undef] $simianarmy_janitor_edda_client_retry_interval = undef,
+  Variant[String, Undef] $simianarmy_janitor_edda_client_timeout = undef,
+  Variant[String, Undef] $simianarmy_janitor_edda_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_edda_endpoint_us_east_1 = undef,
+  Variant[String, Undef] $simianarmy_janitor_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_enabled_resources = undef,
+  Variant[String, Undef] $simianarmy_janitor_image_crawler_look_back_days = undef,
+  Variant[String, Undef] $simianarmy_janitor_image_owner_id = undef,
+  Variant[String, Undef] $simianarmy_janitor_leashed = undef,
+  Variant[String, Undef] $simianarmy_janitor_notification_days_before_termination = undef,
+  Variant[String, Undef] $simianarmy_janitor_notification_default_email = undef,
+  Variant[String, Undef] $simianarmy_janitor_notification_owner_email_domain = undef,
+  Variant[String, Undef] $simianarmy_janitor_notification_source_email = undef,
+  Variant[String, Undef] $simianarmy_janitor_resources_sdb_domain = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_delete_on_termination_rule_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_delete_on_termination_rule_retention_days = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_no_generated_ami_rule_age_threshold = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_no_generated_ami_rule_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_no_generated_ami_rule_retention_days = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_old_detached_volume_rule_detach_days_threshold = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_old_detached_volume_rule_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_old_detached_volume_rule_retention_days = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_old_empty_asg_rule_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_old_empty_asg_rule_launch_config_age_threshold = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_old_empty_asg_rule_retention_days = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_old_unused_launch_config_rule_age_threshold = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_old_unused_launch_config_rule_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_old_unused_launch_config_rule_retention_days = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_orphaned_instance_rule_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_orphaned_instance_rule_instance_age_threshold = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_orphaned_instance_rule_opsworks_parentage = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_orphaned_instance_rule_retention_days_with_owner = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_orphaned_instance_rule_retention_days_without_owner = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_suspended_asg_rule_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_suspended_asg_rule_retention_days = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_suspended_asg_rule_suspension_age_threshold = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_untagged_rule_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_untagged_rule_required_tags = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_untagged_rule_resources = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_untagged_rule_retention_days_with_owner = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_untagged_rule_retention_days_without_owner = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_unused_image_rule_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_unused_image_rule_last_reference_days_threshold = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_unused_image_rule_retention_days = undef,
+  Variant[String, Undef] $simianarmy_janitor_snapshots_owner_id = undef,
+  Variant[String, Undef] $simianarmy_janitor_summary_email_to = undef,
+  Variant[String, Undef] $simianarmy_scheduler_frequency = undef,
+  Variant[String, Undef] $simianarmy_scheduler_frequency_unit = undef,
+  Variant[String, Undef] $simianarmy_scheduler_threads = undef,
+
+) {
+  file { $path:
+    ensure  =&gt; file,
+    owner   =&gt; $owner,
+    group   =&gt; $group,
+    mode    =&gt; $mode,
+    content =&gt; template(&#39;simianarmy/janitor_properties.erb&#39;),
+  }
+}</pre>
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+
+      <div id="footer">
+  Generated on Fri Mar 24 10:26:28 2017 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.8 (ruby-2.3.1).
+</div>
+
+    </div>
+  </body>
+</html>

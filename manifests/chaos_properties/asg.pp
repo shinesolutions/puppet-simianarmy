@@ -36,12 +36,13 @@
 # Copyright © 2017 Shine Solutions Group, unless otherwise noted.
 #
 define simianarmy::chaos_properties::asg (
-  $path = $::simianarmy::chaos_properties::path,
+  String $path = $::simianarmy::chaos_properties::path,
 
-  $enabled                  = false,
-  $probability              = 1.0,
-  $max_terminations_per_day = 1.0,
-  $owner_email              = '',
+  Boolean $enabled                  = false,
+  String  $probability              = '1.0',
+  String  $max_terminations_per_day = '1.0',
+
+  Variant[String, Undef] $owner_email = undef,
 ) {
 
   $line_prefix = "simianarmy.chaos.ASG.${title}"
@@ -61,7 +62,7 @@ define simianarmy::chaos_properties::asg (
         match => "${line_prefix}.maxTerminationsPerDay";
     }
 
-    if $owner_email != '' {
+    if $owner_email != undef {
       file_line {
         "${title}.notification.enabled":
           line  => "${line_prefix}.notification.enabled = true",

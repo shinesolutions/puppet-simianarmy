@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Defined Type: simianarmy::chaos_properties::asg
+  
+    &mdash; Documentation by YARD 0.9.8
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "puppet_defined_types::simianarmy::chaos_properties::asg";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../puppet_defined_type_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (s)</a> &raquo;
+    <span class='title'><span class='object_link'>Defined Types</span></span>
+     &raquo; 
+    <span class="title">simianarmy::chaos_properties::asg</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="puppet_class_list_link"
+        href="../puppet_class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Defined Type: simianarmy::chaos_properties::asg</h1>
+<div class="box_info">
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>
+      manifests/chaos_properties/asg.pp
+    </dd>
+  </dl>
+</div>
+
+  <h2>Summary</h2>
+  Write properties for a specific Autoscaling group (ASG) to the
+`chaos.properties` file.
+
+<h2>Overview</h2>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Copyright © 2017 Shine Solutions Group, unless otherwise noted.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code>simianarmy::chaos_properties::asg { &lt;asg_name&gt;:
+  enabled                  =&gt; true,
+  probability              =&gt; 0.5,
+  max_terminations_per_day =&gt; 1.0,
+  owner_email              =&gt; &#39;owner@domain.com&#39;,
+}</code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>path</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>$::simianarmy::chaos_properties::path</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The path to the application.properties file on disk. Defaults to the
+<code>chaos.properties</code> managed by the
+<code>simianarmy::chaos_properties</code> class.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>enabled</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>false</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Boolean to control whether this ASG is enabled.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>probability</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;1.0&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>This is the probability of termination per day. See the following link for
+more details:  <a
+href="https://github.com/Netflix/SimianArmy/wiki/Chaos-Settings#simianarmychaosasgprobability">github.com/Netflix/SimianArmy/wiki/Chaos-Settings#simianarmychaosasgprobability</a></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>max_terminations_per_day</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;1.0&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>This setting allows you to set a value of maximum terminations per calendar
+day (24 hours) for a specific ASG.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>owner_email</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Set the destination email that the termination notifications will be sent
+to for a specific ASG&#39;s instances. Also sets
+<code>simianarmy.chaos.ASG.${title}.notification.enabled</code> to true.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>James Sinclair <a
+href="mailto:james.sinclair@shinesolutions.com">james.sinclair@shinesolutions.com</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><div class="method_details_list">
+  <table class="source_code">
+    <tr>
+      <td>
+        <pre class="lines">
+
+
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76</pre>
+      </td>
+      <td>
+        <pre class="code"><span class="info file"># File 'manifests/chaos_properties/asg.pp', line 38</span>
+
+define simianarmy::chaos_properties::asg (
+  String $path = $::simianarmy::chaos_properties::path,
+
+  Boolean $enabled                  = false,
+  String  $probability              = &#39;1.0&#39;,
+  String  $max_terminations_per_day = &#39;1.0&#39;,
+
+  Variant[String, Undef] $owner_email = undef,
+) {
+
+  $line_prefix = &quot;simianarmy.chaos.ASG.${title}&quot;
+
+  file_line { &quot;${title}.enabled&quot;:
+    line  =&gt; &quot;${line_prefix}.enabled = ${enabled}&quot;,
+    match =&gt; &quot;${line_prefix}.enabled&quot;,
+  }
+
+  if $enabled {
+    file_line {
+      &quot;${title}.probability&quot;:
+        line  =&gt; &quot;${line_prefix}.probability = ${probability}&quot;,
+        match =&gt; &quot;${line_prefix}.probability&quot;;
+      &quot;${title}.maxTerminationsPerDay&quot;:
+        line  =&gt; &quot;${line_prefix}.maxTerminationsPerDay = ${max_terminations_per_day}&quot;,
+        match =&gt; &quot;${line_prefix}.maxTerminationsPerDay&quot;;
+    }
+
+    if $owner_email != undef {
+      file_line {
+        &quot;${title}.notification.enabled&quot;:
+          line  =&gt; &quot;${line_prefix}.notification.enabled = true&quot;,
+          match =&gt; &quot;${line_prefix}.notification.enabled&quot;;
+        &quot;${title}.ownerEmail&quot;:
+          line  =&gt; &quot;${line_prefix}.ownerEmail = ${owner_email}&quot;,
+          match =&gt; &quot;${line_prefix}.ownerEmail&quot;;
+      }
+    }
+  }
+}</pre>
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+
+      <div id="footer">
+  Generated on Fri Mar 24 10:26:29 2017 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.8 (ruby-2.3.1).
+</div>
+
+    </div>
+  </body>
+</html>

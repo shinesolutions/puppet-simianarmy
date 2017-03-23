@@ -33,14 +33,14 @@
 # Copyright © 2017 Shine Solutions Group, unless otherwise noted.
 #
 class simianarmy::log4j_properties (
-  $path,
-  $owner,
-  $group,
-  $mode,
-  $log_file_name,
+  String $path,
+  String $owner,
+  String $group,
+  String $mode,
+  String $log_file_name,
 
-  $stdout_threshold = 'WARN',
-  $daily_rolling_threshold = 'INFO',
+  String $stdout_threshold = 'WARN',
+  String $daily_rolling_threshold = 'INFO',
 ) {
   file { $path:
     ensure  => file,

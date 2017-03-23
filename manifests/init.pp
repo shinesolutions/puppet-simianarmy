@@ -66,25 +66,25 @@
 # Copyright © 2017	Shine Solutions Group, unless otherwise noted.
 #
 class simianarmy (
-  $service_name,
-  $basedir,
-  $installdir,
-  $homedir,
-  $user,
-  $group,
+  String $service_name,
+  String $basedir,
+  String $installdir,
+  String $homedir,
+  String $user,
+  String $group,
 
-  $warfile_source,
-  $warfile_checksum_value,
-  $warfile_checksum_type = 'sha256',
-  $warfile_mode          = '0400',
+  String $warfile_source,
+  String $warfile_checksum_value,
+  String $warfile_checksum_type = 'sha256',
+  String $warfile_mode          = '0400',
 
-  $manage_basedir    = true,
-  $manage_installdir = false,
-  $manage_homedir    = true,
-  $manage_user       = true,
-  $manage_group      = true,
+  Boolean $manage_basedir    = true,
+  Boolean $manage_installdir = false,
+  Boolean $manage_homedir    = true,
+  Boolean $manage_user       = true,
+  Boolean $manage_group      = true,
 
-  $aws_profile = undef,
+  Variant[String, Undef] $aws_profile = undef,
 ){
   if $manage_basedir {
     file { $basedir:

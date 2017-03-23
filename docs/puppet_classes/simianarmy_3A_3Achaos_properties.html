@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Puppet Class: simianarmy::chaos_properties
+  
+    &mdash; Documentation by YARD 0.9.8
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "puppet_classes::simianarmy::chaos_properties";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../puppet_class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (s)</a> &raquo;
+    <span class='title'><span class='object_link'>Puppet Classes</span></span>
+     &raquo; 
+    <span class="title">simianarmy::chaos_properties</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="puppet_class_list_link"
+        href="../puppet_class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Puppet Class: simianarmy::chaos_properties</h1>
+<div class="box_info">
+  
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>
+      manifests/chaos_properties.pp
+    </dd>
+  </dl>
+</div>
+
+  <h2>Summary</h2>
+  Write the `chaos.properties` file.
+
+<h2>Overview</h2>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>This class writes the <code>chaos.properties</code> file for the Netflix
+Chaos Monkey.  It is auto-generated and should not be modified by hand.
+Documentation for  each of the properties can be found in the example
+<code>chaos.properties</code> from  which it is generated. (see below)</p>
+
+<p><em>Note:</em> This is an internal class that shouldn&#39;t be used
+directly. It is  included by the <code>simianarmy</code> class. You can
+change values for it&#39;s  parameters using Hiera.</p>
+
+<p>Copyright © 2017 Shine Solutions Group, unless otherwise noted.</p>
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>path</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The path to the chaos.properties file on disk. Required.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>owner</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The user that should own the chaos.properties file. This user is
+<em>not</em> created by this module and should be managed elsewhere.
+Required.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>group</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The group that should own the chaos.properties file. This group is
+<em>not</em> created by this module and should be managed elsewhere.
+Required.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>mode</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The mode of the chaos.properties file. Passed to the <code>file</code>
+resource.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_asg_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.ASG.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_asg_max_terminations_per_day</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.ASG.maxTerminationsPerDay</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_asg_probability</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.ASG.probability</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_asg_tag_key</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.ASGtag.key</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_asg_tag_value</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.ASGtag.value</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_blockallnetworktraffic_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.blockallnetworktraffic.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_burncpu_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.burncpu.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_burnio_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.burnio.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_burnmoney</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.burnmoney</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_detachvolumes_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.detachvolumes.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_faildns_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.faildns.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_faildynamodb_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.faildynamodb.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_failec2_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.failec2.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_fails3_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.fails3.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_filldisk_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.filldisk.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_killprocesses_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.killprocesses.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_leashed</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.leashed</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_mandatory_termination_default_probability</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.chaos.mandatoryTermination.defaultProbability</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_mandatory_termination_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.mandatoryTermination.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_mandatory_termination_window_in_days</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.chaos.mandatoryTermination.windowInDays</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_networkcorruption_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.networkcorruption.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_networklatency_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.networklatency.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_networkloss_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.networkloss.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_notification_body_prefix</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.notification.body.prefix</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_notification_body_suffix</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.notification.body.suffix</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_notification_global_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.notification.global.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_notification_global_receiver_email</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property
+<code>simianarmy.chaos.notification.global.receiverEmail</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_notification_source_email</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.notification.sourceEmail</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_notification_subject_is_body</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.notification.subject.isBody</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_notification_subject_prefix</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.notification.subject.prefix</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_notification_subject_suffix</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.notification.subject.suffix</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_nullroute_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.nullroute.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_chaos_shutdowninstance_enabled</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.chaos.shutdowninstance.enabled</code></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>simianarmy_client_chaos_class</span>
+      
+      
+        <span class='type'>(<tt>Variant[String, Undef]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Java property <code>simianarmy.client.chaos.class</code></p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="https://github.com/Netflix/SimianArmy/blob/master/src/main/resources/chaos.properties" target="_parent" title="The example `chaos.properties` file.">The example `chaos.properties` file.</a></li>
+    
+  </ul>
+
+</div><div class="method_details_list">
+  <table class="source_code">
+    <tr>
+      <td>
+        <pre class="lines">
+
+
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188</pre>
+      </td>
+      <td>
+        <pre class="code"><span class="info file"># File 'manifests/chaos_properties.pp', line 138</span>
+
+class simianarmy::chaos_properties (
+  String $path,
+  String $owner,
+  String $group,
+  String $mode,
+
+  Variant[String, Undef] $simianarmy_chaos_asg_enabled = undef,
+  Variant[String, Undef] $simianarmy_chaos_asg_max_terminations_per_day = undef,
+  Variant[String, Undef] $simianarmy_chaos_asg_probability = undef,
+  Variant[String, Undef] $simianarmy_chaos_asg_tag_key = undef,
+  Variant[String, Undef] $simianarmy_chaos_asg_tag_value = undef,
+  Variant[String, Undef] $simianarmy_chaos_blockallnetworktraffic_enabled = undef,
+  Variant[String, Undef] $simianarmy_chaos_burncpu_enabled = undef,
+  Variant[String, Undef] $simianarmy_chaos_burnio_enabled = undef,
+  Variant[String, Undef] $simianarmy_chaos_burnmoney = undef,
+  Variant[String, Undef] $simianarmy_chaos_detachvolumes_enabled = undef,
+  Variant[String, Undef] $simianarmy_chaos_enabled = undef,
+  Variant[String, Undef] $simianarmy_chaos_faildns_enabled = undef,
+  Variant[String, Undef] $simianarmy_chaos_faildynamodb_enabled = undef,
+  Variant[String, Undef] $simianarmy_chaos_failec2_enabled = undef,
+  Variant[String, Undef] $simianarmy_chaos_fails3_enabled = undef,
+  Variant[String, Undef] $simianarmy_chaos_filldisk_enabled = undef,
+  Variant[String, Undef] $simianarmy_chaos_killprocesses_enabled = undef,
+  Variant[String, Undef] $simianarmy_chaos_leashed = undef,
+  Variant[String, Undef] $simianarmy_chaos_mandatory_termination_default_probability = undef,
+  Variant[String, Undef] $simianarmy_chaos_mandatory_termination_enabled = undef,
+  Variant[String, Undef] $simianarmy_chaos_mandatory_termination_window_in_days = undef,
+  Variant[String, Undef] $simianarmy_chaos_networkcorruption_enabled = undef,
+  Variant[String, Undef] $simianarmy_chaos_networklatency_enabled = undef,
+  Variant[String, Undef] $simianarmy_chaos_networkloss_enabled = undef,
+  Variant[String, Undef] $simianarmy_chaos_notification_body_prefix = undef,
+  Variant[String, Undef] $simianarmy_chaos_notification_body_suffix = undef,
+  Variant[String, Undef] $simianarmy_chaos_notification_global_enabled = undef,
+  Variant[String, Undef] $simianarmy_chaos_notification_global_receiver_email = undef,
+  Variant[String, Undef] $simianarmy_chaos_notification_source_email = undef,
+  Variant[String, Undef] $simianarmy_chaos_notification_subject_is_body = undef,
+  Variant[String, Undef] $simianarmy_chaos_notification_subject_prefix = undef,
+  Variant[String, Undef] $simianarmy_chaos_notification_subject_suffix = undef,
+  Variant[String, Undef] $simianarmy_chaos_nullroute_enabled = undef,
+  Variant[String, Undef] $simianarmy_chaos_shutdowninstance_enabled = undef,
+  Variant[String, Undef] $simianarmy_client_chaos_class = undef,
+
+) {
+  file { $path:
+    ensure  =&gt; file,
+    owner   =&gt; $owner,
+    group   =&gt; $group,
+    mode    =&gt; $mode,
+    content =&gt; template(&#39;simianarmy/chaos_properties.erb&#39;),
+  }
+}</pre>
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+
+      <div id="footer">
+  Generated on Fri Mar 24 10:26:27 2017 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.8 (ruby-2.3.1).
+</div>
+
+    </div>
+  </body>
+</html>
