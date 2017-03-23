@@ -1,0 +1,19 @@
+---
+source:
+  link: https://github.com/Netflix/SimianArmy/blob/master/src/main/resources/simianarmy.properties
+  raw:  https://github.com/Netflix/SimianArmy/raw/master/src/main/resources/simianarmy.properties
+parent-class: simianarmy
+overview: >
+  This class writes the `simianarmy.properties` file for the Netflix Chaos
+  Monkey.  It is auto-generated and should not be modified by hand.
+  Documentation for each of the properties can be found in the example
+  `simianarmy.properties` from which it is generated. (see below)
+
+  _Note:_ This is an internal class that shouldn't be used directly. It is
+  included by the `simianarmy` class. You can change values for it's parameters
+  using Hiera.
+line-filters:
+  - pattern: '# ?(simianarmy\.(aws|calendar|recorder|scheduler|tags).*)'
+    repl: '\1'
+  - pattern: '^(.*<(:?groupType|asgName)>.*)$'
+    repl: ''

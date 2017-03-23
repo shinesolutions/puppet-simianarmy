@@ -7,6 +7,10 @@ describe 'simianarmy::conformity_properties' do
     let(:params) { {:simianarmy_calendar_close_hour => 'foo', :path => '/tmp/foo', } }
     it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.calendar.closeHour = foo/) }
   end
+  context 'with simianarmy_calendar_is_monkey_time => foo' do
+    let(:params) { {:simianarmy_calendar_is_monkey_time => 'foo', :path => '/tmp/foo', } }
+    it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.calendar.isMonkeyTime = foo/) }
+  end
   context 'with simianarmy_calendar_open_hour => foo' do
     let(:params) { {:simianarmy_calendar_open_hour => 'foo', :path => '/tmp/foo', } }
     it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.calendar.openHour = foo/) }
@@ -18,6 +22,18 @@ describe 'simianarmy::conformity_properties' do
   context 'with simianarmy_conformity_eureka_enabled => foo' do
     let(:params) { {:simianarmy_conformity_eureka_enabled => 'foo', :path => '/tmp/foo', } }
     it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.conformity.Eureka.enabled = foo/) }
+  end
+  context 'with simianarmy_conformity_cluster_foo_excluded_rules => foo' do
+    let(:params) { {:simianarmy_conformity_cluster_foo_excluded_rules => 'foo', :path => '/tmp/foo', } }
+    it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.conformity.cluster.foo.excludedRules = foo/) }
+  end
+  context 'with simianarmy_conformity_cluster_foo_opted_out => foo' do
+    let(:params) { {:simianarmy_conformity_cluster_foo_opted_out => 'foo', :path => '/tmp/foo', } }
+    it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.conformity.cluster.foo.optedOut = foo/) }
+  end
+  context 'with simianarmy_conformity_cluster_foo_owner_email => foo' do
+    let(:params) { {:simianarmy_conformity_cluster_foo_owner_email => 'foo', :path => '/tmp/foo', } }
+    it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.conformity.cluster.foo.ownerEmail = foo/) }
   end
   context 'with simianarmy_conformity_enabled => foo' do
     let(:params) { {:simianarmy_conformity_enabled => 'foo', :path => '/tmp/foo', } }

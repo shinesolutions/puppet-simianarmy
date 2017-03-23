@@ -1,70 +1,93 @@
-# == Class: simianarmy::simianarmy_properties
+# @summary
+#   Write the `simianarmy.properties` file.
 #
-# Write the `application.properties` file.
+#  This class writes the `simianarmy.properties` file for the Netflix Chaos
+#  Monkey.  It is auto-generated and should not be modified by hand.
+#  Documentation for each of the properties can be found in the example
+#  `simianarmy.properties` from which it is generated. (see below)
 #
-# === Parameters
+#  _Note:_ This is an internal class that shouldn't be used directly. It is
+#  included by the `simianarmy` class. You can change values for it's
+#  parameters using Hiera.
 #
-# [*path*]
-#   The path to the application.properties file on disk. Required.
+# @see https://github.com/Netflix/SimianArmy/blob/master/src/main/resources/simianarmy.properties
+#   The example `simianarmy.properties` file.
 #
-# [*owner*]
-#   The user that should own the application.properties file. This user is *not*
+# @param path
+#   The path to the simianarmy.properties file on disk. Required.
+#
+# @param owner
+#   The user that should own the simianarmy.properties file. This user is *not*
 #   created by this module and should be managed elsewhere. Required.
 #
-# [*group*]
-#   The group that should own the application.properties file. This group is
+# @param group
+#   The group that should own the simianarmy.properties file. This group is
 #   *not* created by this module and should be managed elsewhere. Required.
 #
-# [*mode*]
-#   The mode of the application.properties file. Passed to the `file` resource.
+# @param mode
+#   The mode of the simianarmy.properties file. Passed to the `file` resource.
 #
-# [*simianarmy_calendar_close_hour*]
+# @param simianarmy_aws_email_region
+#   Java property `simianarmy.aws.email.region`
+#
+# @param simianarmy_calendar_close_hour
 #   Java property `simianarmy.calendar.closeHour`
 #
-# [*simianarmy_calendar_open_hour*]
+# @param simianarmy_calendar_is_monkey_time
+#   Java property `simianarmy.calendar.isMonkeyTime`
+#
+# @param simianarmy_calendar_open_hour
 #   Java property `simianarmy.calendar.openHour`
 #
-# [*simianarmy_calendar_timezone*]
+# @param simianarmy_calendar_timezone
 #   Java property `simianarmy.calendar.timezone`
 #
-# [*simianarmy_recorder_sdb_domain*]
+# @param simianarmy_recorder_localdb_file
+#   Java property `simianarmy.recorder.localdb.file`
+#
+# @param simianarmy_recorder_localdb_max_events
+#   Java property `simianarmy.recorder.localdb.max_events`
+#
+# @param simianarmy_recorder_localdb_password
+#   Java property `simianarmy.recorder.localdb.password`
+#
+# @param simianarmy_recorder_sdb_domain
 #   Java property `simianarmy.recorder.sdb.domain`
 #
-# [*simianarmy_scheduler_frequency*]
+# @param simianarmy_scheduler_frequency
 #   Java property `simianarmy.scheduler.frequency`
 #
-# [*simianarmy_scheduler_frequency_unit*]
+# @param simianarmy_scheduler_frequency_unit
 #   Java property `simianarmy.scheduler.frequencyUnit`
 #
-# [*simianarmy_scheduler_threads*]
+# @param simianarmy_scheduler_threads
 #   Java property `simianarmy.scheduler.threads`
 #
-# === Examples
+# @param simianarmy_tags_owner
+#   Java property `simianarmy.tags.owner`
 #
-#  This is an internal class that isn't normally used. You can change values
-#  for it's parameters using Hiera.
-#
-# === Authors
-#
-# This is an auto-generated class.
-#
-# === Copyright
 #
 # Copyright © 2017 Shine Solutions Group, unless otherwise noted.
 #
 class simianarmy::simianarmy_properties (
-  $path,
-  $owner,
-  $group,
-  $mode,
+  String $path,
+  String $owner,
+  String $group,
+  String $mode,
 
-  $simianarmy_calendar_close_hour = undef,
-  $simianarmy_calendar_open_hour = undef,
-  $simianarmy_calendar_timezone = undef,
-  $simianarmy_recorder_sdb_domain = undef,
-  $simianarmy_scheduler_frequency = undef,
-  $simianarmy_scheduler_frequency_unit = undef,
-  $simianarmy_scheduler_threads = undef,
+  Variant[String, Undef] $simianarmy_aws_email_region = undef,
+  Variant[String, Undef] $simianarmy_calendar_close_hour = undef,
+  Variant[String, Undef] $simianarmy_calendar_is_monkey_time = undef,
+  Variant[String, Undef] $simianarmy_calendar_open_hour = undef,
+  Variant[String, Undef] $simianarmy_calendar_timezone = undef,
+  Variant[String, Undef] $simianarmy_recorder_localdb_file = undef,
+  Variant[String, Undef] $simianarmy_recorder_localdb_max_events = undef,
+  Variant[String, Undef] $simianarmy_recorder_localdb_password = undef,
+  Variant[String, Undef] $simianarmy_recorder_sdb_domain = undef,
+  Variant[String, Undef] $simianarmy_scheduler_frequency = undef,
+  Variant[String, Undef] $simianarmy_scheduler_frequency_unit = undef,
+  Variant[String, Undef] $simianarmy_scheduler_threads = undef,
+  Variant[String, Undef] $simianarmy_tags_owner = undef,
 
 ) {
   file { $path:

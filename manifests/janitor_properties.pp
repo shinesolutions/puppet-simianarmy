@@ -1,226 +1,261 @@
-# == Class: simianarmy::janitor_properties
+# @summary
+#   Write the `janitor.properties` file.
 #
-# Write the `application.properties` file.
+#  This class writes the `janitor.properties` file for the Netflix Chaos
+#  Monkey. It is auto-generated and should not be modified by hand.
+#  Documentation for each of the properties can be found in the example
+#  `janitor.properties` from which it is generated. (see below)
 #
-# === Parameters
+#  _Note:_ This is an internal class that shouldn't be used directly. It is
+#  included by the `simianarmy` class. You can change values for it's
+#  parameters using Hiera.
 #
-# [*path*]
-#   The path to the application.properties file on disk. Required.
+# @see https://github.com/Netflix/SimianArmy/blob/master/src/main/resources/janitor.properties
+#   The example `janitor.properties` file.
 #
-# [*owner*]
-#   The user that should own the application.properties file. This user is *not*
+# @param path
+#   The path to the janitor.properties file on disk. Required.
+#
+# @param owner
+#   The user that should own the janitor.properties file. This user is *not*
 #   created by this module and should be managed elsewhere. Required.
 #
-# [*group*]
-#   The group that should own the application.properties file. This group is
+# @param group
+#   The group that should own the janitor.properties file. This group is
 #   *not* created by this module and should be managed elsewhere. Required.
 #
-# [*mode*]
-#   The mode of the application.properties file. Passed to the `file` resource.
+# @param mode
+#   The mode of the janitor.properties file. Passed to the `file` resource.
 #
-# [*simianarmy_calendar_close_hour*]
+# @param simianarmy_calendar_close_hour
 #   Java property `simianarmy.calendar.closeHour`
 #
-# [*simianarmy_calendar_open_hour*]
+# @param simianarmy_calendar_is_monkey_time
+#   Java property `simianarmy.calendar.isMonkeyTime`
+#
+# @param simianarmy_calendar_open_hour
 #   Java property `simianarmy.calendar.openHour`
 #
-# [*simianarmy_calendar_timezone*]
+# @param simianarmy_calendar_timezone
 #   Java property `simianarmy.calendar.timezone`
 #
-# [*simianarmy_janitor_eureka_enabled*]
+# @param simianarmy_janitor_eureka_enabled
 #   Java property `simianarmy.janitor.Eureka.enabled`
 #
-# [*simianarmy_janitor_enabled*]
+# @param simianarmy_janitor_edda_client_retries
+#   Java property `simianarmy.janitor.edda.client.retries`
+#
+# @param simianarmy_janitor_edda_client_retry_interval
+#   Java property `simianarmy.janitor.edda.client.retryInterval`
+#
+# @param simianarmy_janitor_edda_client_timeout
+#   Java property `simianarmy.janitor.edda.client.timeout`
+#
+# @param simianarmy_janitor_edda_enabled
+#   Java property `simianarmy.janitor.edda.enabled`
+#
+# @param simianarmy_janitor_edda_endpoint_us_east_1
+#   Java property `simianarmy.janitor.edda.endpoint.us-east-1`
+#
+# @param simianarmy_janitor_enabled
 #   Java property `simianarmy.janitor.enabled`
 #
-# [*simianarmy_janitor_enabled_resources*]
+# @param simianarmy_janitor_enabled_resources
 #   Java property `simianarmy.janitor.enabledResources`
 #
-# [*simianarmy_janitor_image_crawler_look_back_days*]
+# @param simianarmy_janitor_image_crawler_look_back_days
 #   Java property `simianarmy.janitor.image.crawler.lookBackDays`
 #
-# [*simianarmy_janitor_leashed*]
+# @param simianarmy_janitor_image_owner_id
+#   Java property `simianarmy.janitor.image.ownerId`
+#
+# @param simianarmy_janitor_leashed
 #   Java property `simianarmy.janitor.leashed`
 #
-# [*simianarmy_janitor_notification_days_before_termination*]
+# @param simianarmy_janitor_notification_days_before_termination
 #   Java property `simianarmy.janitor.notification.daysBeforeTermination`
 #
-# [*simianarmy_janitor_notification_default_email*]
+# @param simianarmy_janitor_notification_default_email
 #   Java property `simianarmy.janitor.notification.defaultEmail`
 #
-# [*simianarmy_janitor_notification_source_email*]
+# @param simianarmy_janitor_notification_owner_email_domain
+#   Java property `simianarmy.janitor.notification.ownerEmailDomain`
+#
+# @param simianarmy_janitor_notification_source_email
 #   Java property `simianarmy.janitor.notification.sourceEmail`
 #
-# [*simianarmy_janitor_resources_sdb_domain*]
+# @param simianarmy_janitor_resources_sdb_domain
 #   Java property `simianarmy.janitor.resources.sdb.domain`
 #
-# [*simianarmy_janitor_rule_delete_on_termination_rule_enabled*]
+# @param simianarmy_janitor_rule_delete_on_termination_rule_enabled
 #   Java property `simianarmy.janitor.rule.deleteOnTerminationRule.enabled`
 #
-# [*simianarmy_janitor_rule_delete_on_termination_rule_retention_days*]
+# @param simianarmy_janitor_rule_delete_on_termination_rule_retention_days
 #   Java property `simianarmy.janitor.rule.deleteOnTerminationRule.retentionDays`
 #
-# [*simianarmy_janitor_rule_no_generated_ami_rule_age_threshold*]
+# @param simianarmy_janitor_rule_no_generated_ami_rule_age_threshold
 #   Java property `simianarmy.janitor.rule.noGeneratedAMIRule.ageThreshold`
 #
-# [*simianarmy_janitor_rule_no_generated_ami_rule_enabled*]
+# @param simianarmy_janitor_rule_no_generated_ami_rule_enabled
 #   Java property `simianarmy.janitor.rule.noGeneratedAMIRule.enabled`
 #
-# [*simianarmy_janitor_rule_no_generated_ami_rule_retention_days*]
+# @param simianarmy_janitor_rule_no_generated_ami_rule_retention_days
 #   Java property `simianarmy.janitor.rule.noGeneratedAMIRule.retentionDays`
 #
-# [*simianarmy_janitor_rule_old_detached_volume_rule_detach_days_threshold*]
+# @param simianarmy_janitor_rule_old_detached_volume_rule_detach_days_threshold
 #   Java property `simianarmy.janitor.rule.oldDetachedVolumeRule.detachDaysThreshold`
 #
-# [*simianarmy_janitor_rule_old_detached_volume_rule_enabled*]
+# @param simianarmy_janitor_rule_old_detached_volume_rule_enabled
 #   Java property `simianarmy.janitor.rule.oldDetachedVolumeRule.enabled`
 #
-# [*simianarmy_janitor_rule_old_detached_volume_rule_retention_days*]
+# @param simianarmy_janitor_rule_old_detached_volume_rule_retention_days
 #   Java property `simianarmy.janitor.rule.oldDetachedVolumeRule.retentionDays`
 #
-# [*simianarmy_janitor_rule_old_empty_asg_rule_enabled*]
+# @param simianarmy_janitor_rule_old_empty_asg_rule_enabled
 #   Java property `simianarmy.janitor.rule.oldEmptyASGRule.enabled`
 #
-# [*simianarmy_janitor_rule_old_empty_asg_rule_launch_config_age_threshold*]
+# @param simianarmy_janitor_rule_old_empty_asg_rule_launch_config_age_threshold
 #   Java property `simianarmy.janitor.rule.oldEmptyASGRule.launchConfigAgeThreshold`
 #
-# [*simianarmy_janitor_rule_old_empty_asg_rule_retention_days*]
+# @param simianarmy_janitor_rule_old_empty_asg_rule_retention_days
 #   Java property `simianarmy.janitor.rule.oldEmptyASGRule.retentionDays`
 #
-# [*simianarmy_janitor_rule_old_unused_launch_config_rule_age_threshold*]
+# @param simianarmy_janitor_rule_old_unused_launch_config_rule_age_threshold
 #   Java property `simianarmy.janitor.rule.oldUnusedLaunchConfigRule.ageThreshold`
 #
-# [*simianarmy_janitor_rule_old_unused_launch_config_rule_enabled*]
+# @param simianarmy_janitor_rule_old_unused_launch_config_rule_enabled
 #   Java property `simianarmy.janitor.rule.oldUnusedLaunchConfigRule.enabled`
 #
-# [*simianarmy_janitor_rule_old_unused_launch_config_rule_retention_days*]
+# @param simianarmy_janitor_rule_old_unused_launch_config_rule_retention_days
 #   Java property `simianarmy.janitor.rule.oldUnusedLaunchConfigRule.retentionDays`
 #
-# [*simianarmy_janitor_rule_orphaned_instance_rule_enabled*]
+# @param simianarmy_janitor_rule_orphaned_instance_rule_enabled
 #   Java property `simianarmy.janitor.rule.orphanedInstanceRule.enabled`
 #
-# [*simianarmy_janitor_rule_orphaned_instance_rule_instance_age_threshold*]
+# @param simianarmy_janitor_rule_orphaned_instance_rule_instance_age_threshold
 #   Java property `simianarmy.janitor.rule.orphanedInstanceRule.instanceAgeThreshold`
 #
-# [*simianarmy_janitor_rule_orphaned_instance_rule_opsworks_parentage*]
+# @param simianarmy_janitor_rule_orphaned_instance_rule_opsworks_parentage
 #   Java property `simianarmy.janitor.rule.orphanedInstanceRule.opsworks.parentage`
 #
-# [*simianarmy_janitor_rule_orphaned_instance_rule_retention_days_with_owner*]
+# @param simianarmy_janitor_rule_orphaned_instance_rule_retention_days_with_owner
 #   Java property `simianarmy.janitor.rule.orphanedInstanceRule.retentionDaysWithOwner`
 #
-# [*simianarmy_janitor_rule_orphaned_instance_rule_retention_days_without_owner*]
+# @param simianarmy_janitor_rule_orphaned_instance_rule_retention_days_without_owner
 #   Java property `simianarmy.janitor.rule.orphanedInstanceRule.retentionDaysWithoutOwner`
 #
-# [*simianarmy_janitor_rule_suspended_asg_rule_enabled*]
+# @param simianarmy_janitor_rule_suspended_asg_rule_enabled
 #   Java property `simianarmy.janitor.rule.suspendedASGRule.enabled`
 #
-# [*simianarmy_janitor_rule_suspended_asg_rule_retention_days*]
+# @param simianarmy_janitor_rule_suspended_asg_rule_retention_days
 #   Java property `simianarmy.janitor.rule.suspendedASGRule.retentionDays`
 #
-# [*simianarmy_janitor_rule_suspended_asg_rule_suspension_age_threshold*]
+# @param simianarmy_janitor_rule_suspended_asg_rule_suspension_age_threshold
 #   Java property `simianarmy.janitor.rule.suspendedASGRule.suspensionAgeThreshold`
 #
-# [*simianarmy_janitor_rule_untagged_rule_enabled*]
+# @param simianarmy_janitor_rule_untagged_rule_enabled
 #   Java property `simianarmy.janitor.rule.untaggedRule.enabled`
 #
-# [*simianarmy_janitor_rule_untagged_rule_required_tags*]
+# @param simianarmy_janitor_rule_untagged_rule_required_tags
 #   Java property `simianarmy.janitor.rule.untaggedRule.requiredTags`
 #
-# [*simianarmy_janitor_rule_untagged_rule_resources*]
+# @param simianarmy_janitor_rule_untagged_rule_resources
 #   Java property `simianarmy.janitor.rule.untaggedRule.resources`
 #
-# [*simianarmy_janitor_rule_untagged_rule_retention_days_with_owner*]
+# @param simianarmy_janitor_rule_untagged_rule_retention_days_with_owner
 #   Java property `simianarmy.janitor.rule.untaggedRule.retentionDaysWithOwner`
 #
-# [*simianarmy_janitor_rule_untagged_rule_retention_days_without_owner*]
+# @param simianarmy_janitor_rule_untagged_rule_retention_days_without_owner
 #   Java property `simianarmy.janitor.rule.untaggedRule.retentionDaysWithoutOwner`
 #
-# [*simianarmy_janitor_rule_unused_image_rule_enabled*]
+# @param simianarmy_janitor_rule_unused_image_rule_enabled
 #   Java property `simianarmy.janitor.rule.unusedImageRule.enabled`
 #
-# [*simianarmy_janitor_rule_unused_image_rule_last_reference_days_threshold*]
+# @param simianarmy_janitor_rule_unused_image_rule_last_reference_days_threshold
 #   Java property `simianarmy.janitor.rule.unusedImageRule.lastReferenceDaysThreshold`
 #
-# [*simianarmy_janitor_rule_unused_image_rule_retention_days*]
+# @param simianarmy_janitor_rule_unused_image_rule_retention_days
 #   Java property `simianarmy.janitor.rule.unusedImageRule.retentionDays`
 #
-# [*simianarmy_janitor_summary_email_to*]
+# @param simianarmy_janitor_snapshots_owner_id
+#   Java property `simianarmy.janitor.snapshots.ownerId`
+#
+# @param simianarmy_janitor_summary_email_to
 #   Java property `simianarmy.janitor.summaryEmail.to`
 #
-# [*simianarmy_scheduler_frequency*]
+# @param simianarmy_scheduler_frequency
 #   Java property `simianarmy.scheduler.frequency`
 #
-# [*simianarmy_scheduler_frequency_unit*]
+# @param simianarmy_scheduler_frequency_unit
 #   Java property `simianarmy.scheduler.frequencyUnit`
 #
-# [*simianarmy_scheduler_threads*]
+# @param simianarmy_scheduler_threads
 #   Java property `simianarmy.scheduler.threads`
 #
-# === Examples
-#
-#  This is an internal class that isn't normally used. You can change values
-#  for it's parameters using Hiera.
-#
-# === Authors
-#
-# This is an auto-generated class.
-#
-# === Copyright
 #
 # Copyright © 2017 Shine Solutions Group, unless otherwise noted.
 #
 class simianarmy::janitor_properties (
-  $path,
-  $owner,
-  $group,
-  $mode,
+  String $path,
+  String $owner,
+  String $group,
+  String $mode,
 
-  $simianarmy_calendar_close_hour = undef,
-  $simianarmy_calendar_open_hour = undef,
-  $simianarmy_calendar_timezone = undef,
-  $simianarmy_janitor_eureka_enabled = undef,
-  $simianarmy_janitor_enabled = undef,
-  $simianarmy_janitor_enabled_resources = undef,
-  $simianarmy_janitor_image_crawler_look_back_days = undef,
-  $simianarmy_janitor_leashed = undef,
-  $simianarmy_janitor_notification_days_before_termination = undef,
-  $simianarmy_janitor_notification_default_email = undef,
-  $simianarmy_janitor_notification_source_email = undef,
-  $simianarmy_janitor_resources_sdb_domain = undef,
-  $simianarmy_janitor_rule_delete_on_termination_rule_enabled = undef,
-  $simianarmy_janitor_rule_delete_on_termination_rule_retention_days = undef,
-  $simianarmy_janitor_rule_no_generated_ami_rule_age_threshold = undef,
-  $simianarmy_janitor_rule_no_generated_ami_rule_enabled = undef,
-  $simianarmy_janitor_rule_no_generated_ami_rule_retention_days = undef,
-  $simianarmy_janitor_rule_old_detached_volume_rule_detach_days_threshold = undef,
-  $simianarmy_janitor_rule_old_detached_volume_rule_enabled = undef,
-  $simianarmy_janitor_rule_old_detached_volume_rule_retention_days = undef,
-  $simianarmy_janitor_rule_old_empty_asg_rule_enabled = undef,
-  $simianarmy_janitor_rule_old_empty_asg_rule_launch_config_age_threshold = undef,
-  $simianarmy_janitor_rule_old_empty_asg_rule_retention_days = undef,
-  $simianarmy_janitor_rule_old_unused_launch_config_rule_age_threshold = undef,
-  $simianarmy_janitor_rule_old_unused_launch_config_rule_enabled = undef,
-  $simianarmy_janitor_rule_old_unused_launch_config_rule_retention_days = undef,
-  $simianarmy_janitor_rule_orphaned_instance_rule_enabled = undef,
-  $simianarmy_janitor_rule_orphaned_instance_rule_instance_age_threshold = undef,
-  $simianarmy_janitor_rule_orphaned_instance_rule_opsworks_parentage = undef,
-  $simianarmy_janitor_rule_orphaned_instance_rule_retention_days_with_owner = undef,
-  $simianarmy_janitor_rule_orphaned_instance_rule_retention_days_without_owner = undef,
-  $simianarmy_janitor_rule_suspended_asg_rule_enabled = undef,
-  $simianarmy_janitor_rule_suspended_asg_rule_retention_days = undef,
-  $simianarmy_janitor_rule_suspended_asg_rule_suspension_age_threshold = undef,
-  $simianarmy_janitor_rule_untagged_rule_enabled = undef,
-  $simianarmy_janitor_rule_untagged_rule_required_tags = undef,
-  $simianarmy_janitor_rule_untagged_rule_resources = undef,
-  $simianarmy_janitor_rule_untagged_rule_retention_days_with_owner = undef,
-  $simianarmy_janitor_rule_untagged_rule_retention_days_without_owner = undef,
-  $simianarmy_janitor_rule_unused_image_rule_enabled = undef,
-  $simianarmy_janitor_rule_unused_image_rule_last_reference_days_threshold = undef,
-  $simianarmy_janitor_rule_unused_image_rule_retention_days = undef,
-  $simianarmy_janitor_summary_email_to = undef,
-  $simianarmy_scheduler_frequency = undef,
-  $simianarmy_scheduler_frequency_unit = undef,
-  $simianarmy_scheduler_threads = undef,
+  Variant[String, Undef] $simianarmy_calendar_close_hour = undef,
+  Variant[String, Undef] $simianarmy_calendar_is_monkey_time = undef,
+  Variant[String, Undef] $simianarmy_calendar_open_hour = undef,
+  Variant[String, Undef] $simianarmy_calendar_timezone = undef,
+  Variant[String, Undef] $simianarmy_janitor_eureka_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_edda_client_retries = undef,
+  Variant[String, Undef] $simianarmy_janitor_edda_client_retry_interval = undef,
+  Variant[String, Undef] $simianarmy_janitor_edda_client_timeout = undef,
+  Variant[String, Undef] $simianarmy_janitor_edda_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_edda_endpoint_us_east_1 = undef,
+  Variant[String, Undef] $simianarmy_janitor_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_enabled_resources = undef,
+  Variant[String, Undef] $simianarmy_janitor_image_crawler_look_back_days = undef,
+  Variant[String, Undef] $simianarmy_janitor_image_owner_id = undef,
+  Variant[String, Undef] $simianarmy_janitor_leashed = undef,
+  Variant[String, Undef] $simianarmy_janitor_notification_days_before_termination = undef,
+  Variant[String, Undef] $simianarmy_janitor_notification_default_email = undef,
+  Variant[String, Undef] $simianarmy_janitor_notification_owner_email_domain = undef,
+  Variant[String, Undef] $simianarmy_janitor_notification_source_email = undef,
+  Variant[String, Undef] $simianarmy_janitor_resources_sdb_domain = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_delete_on_termination_rule_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_delete_on_termination_rule_retention_days = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_no_generated_ami_rule_age_threshold = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_no_generated_ami_rule_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_no_generated_ami_rule_retention_days = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_old_detached_volume_rule_detach_days_threshold = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_old_detached_volume_rule_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_old_detached_volume_rule_retention_days = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_old_empty_asg_rule_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_old_empty_asg_rule_launch_config_age_threshold = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_old_empty_asg_rule_retention_days = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_old_unused_launch_config_rule_age_threshold = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_old_unused_launch_config_rule_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_old_unused_launch_config_rule_retention_days = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_orphaned_instance_rule_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_orphaned_instance_rule_instance_age_threshold = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_orphaned_instance_rule_opsworks_parentage = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_orphaned_instance_rule_retention_days_with_owner = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_orphaned_instance_rule_retention_days_without_owner = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_suspended_asg_rule_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_suspended_asg_rule_retention_days = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_suspended_asg_rule_suspension_age_threshold = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_untagged_rule_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_untagged_rule_required_tags = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_untagged_rule_resources = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_untagged_rule_retention_days_with_owner = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_untagged_rule_retention_days_without_owner = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_unused_image_rule_enabled = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_unused_image_rule_last_reference_days_threshold = undef,
+  Variant[String, Undef] $simianarmy_janitor_rule_unused_image_rule_retention_days = undef,
+  Variant[String, Undef] $simianarmy_janitor_snapshots_owner_id = undef,
+  Variant[String, Undef] $simianarmy_janitor_summary_email_to = undef,
+  Variant[String, Undef] $simianarmy_scheduler_frequency = undef,
+  Variant[String, Undef] $simianarmy_scheduler_frequency_unit = undef,
+  Variant[String, Undef] $simianarmy_scheduler_threads = undef,
 
 ) {
   file { $path:

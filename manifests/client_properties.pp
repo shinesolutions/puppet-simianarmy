@@ -1,110 +1,109 @@
-# == Class: simianarmy::client_properties
+# @summary
+#   Write the `client.properties` file.
 #
-# Write the `application.properties` file.
+#  This class writes the `client.properties` file for the Netflix Chaos Monkey.
+#  It is auto-generated and should not be modified by hand.  Documentation for
+#  each of the properties can be found in the example `client.properties` from
+#  which it is generated. (see below)
 #
-# === Parameters
+#  _Note:_ This is an internal class that shouldn't be used directly. It is
+#  included by the `simianarmy` class. You can change values for it's
+#  parameters using Hiera.
 #
-# [*path*]
-#   The path to the application.properties file on disk. Required.
+# @see https://github.com/Netflix/SimianArmy/blob/master/src/main/resources/client.properties
+#   The example `client.properties` file.
 #
-# [*owner*]
-#   The user that should own the application.properties file. This user is *not*
+# @param path
+#   The path to the client.properties file on disk. Required.
+#
+# @param owner
+#   The user that should own the client.properties file. This user is *not*
 #   created by this module and should be managed elsewhere. Required.
 #
-# [*group*]
-#   The group that should own the application.properties file. This group is
+# @param group
+#   The group that should own the client.properties file. This group is
 #   *not* created by this module and should be managed elsewhere. Required.
 #
-# [*mode*]
-#   The mode of the application.properties file. Passed to the `file` resource.
+# @param mode
+#   The mode of the client.properties file. Passed to the `file` resource.
 #
-# [*simianarmy_client_aws_account_key*]
+# @param simianarmy_client_aws_account_key
 #   Java property `simianarmy.client.aws.accountKey`
 #
-# [*simianarmy_client_aws_account_name*]
+# @param simianarmy_client_aws_account_name
 #   Java property `simianarmy.client.aws.accountName`
 #
-# [*simianarmy_client_aws_assume_role_arn*]
+# @param simianarmy_client_aws_assume_role_arn
 #   Java property `simianarmy.client.aws.assumeRoleArn`
 #
-# [*simianarmy_client_aws_proxy_host*]
+# @param simianarmy_client_aws_proxy_host
 #   Java property `simianarmy.client.aws.proxyHost`
 #
-# [*simianarmy_client_aws_proxy_password*]
+# @param simianarmy_client_aws_proxy_password
 #   Java property `simianarmy.client.aws.proxyPassword`
 #
-# [*simianarmy_client_aws_proxy_port*]
+# @param simianarmy_client_aws_proxy_port
 #   Java property `simianarmy.client.aws.proxyPort`
 #
-# [*simianarmy_client_aws_proxy_user*]
+# @param simianarmy_client_aws_proxy_user
 #   Java property `simianarmy.client.aws.proxyUser`
 #
-# [*simianarmy_client_aws_region*]
+# @param simianarmy_client_aws_region
 #   Java property `simianarmy.client.aws.region`
 #
-# [*simianarmy_client_aws_secret_key*]
+# @param simianarmy_client_aws_secret_key
 #   Java property `simianarmy.client.aws.secretKey`
 #
-# [*simianarmy_client_chaos_class*]
+# @param simianarmy_client_chaos_class
 #   Java property `simianarmy.client.chaos.class`
 #
-# [*simianarmy_client_context_class*]
+# @param simianarmy_client_context_class
 #   Java property `simianarmy.client.context.class`
 #
-# [*simianarmy_client_recorder_class*]
+# @param simianarmy_client_recorder_class
 #   Java property `simianarmy.client.recorder.class`
 #
-# [*simianarmy_client_vsphere_password*]
+# @param simianarmy_client_vsphere_password
 #   Java property `simianarmy.client.vsphere.password`
 #
-# [*simianarmy_client_vsphere_termination_strategy_property_name*]
+# @param simianarmy_client_vsphere_termination_strategy_property_name
 #   Java property `simianarmy.client.vsphere.terminationStrategy.property.name`
 #
-# [*simianarmy_client_vsphere_termination_strategy_property_value*]
+# @param simianarmy_client_vsphere_termination_strategy_property_value
 #   Java property `simianarmy.client.vsphere.terminationStrategy.property.value`
 #
-# [*simianarmy_client_vsphere_url*]
+# @param simianarmy_client_vsphere_url
 #   Java property `simianarmy.client.vsphere.url`
 #
-# [*simianarmy_client_vsphere_username*]
+# @param simianarmy_client_vsphere_username
 #   Java property `simianarmy.client.vsphere.username`
 #
-# === Examples
-#
-#  This is an internal class that isn't normally used. You can change values
-#  for it's parameters using Hiera.
-#
-# === Authors
-#
-# This is an auto-generated class.
-#
-# === Copyright
 #
 # Copyright © 2017 Shine Solutions Group, unless otherwise noted.
 #
 class simianarmy::client_properties (
-  $path,
-  $owner,
-  $group,
-  $mode,
+  String $path,
+  String $owner,
+  String $group,
+  String $mode,
 
-  $simianarmy_client_aws_account_key = undef,
-  $simianarmy_client_aws_account_name = undef,
-  $simianarmy_client_aws_assume_role_arn = undef,
-  $simianarmy_client_aws_proxy_host = undef,
-  $simianarmy_client_aws_proxy_password = undef,
-  $simianarmy_client_aws_proxy_port = undef,
-  $simianarmy_client_aws_proxy_user = undef,
-  $simianarmy_client_aws_region = undef,
-  $simianarmy_client_aws_secret_key = undef,
-  $simianarmy_client_chaos_class = undef,
-  $simianarmy_client_context_class = undef,
-  $simianarmy_client_recorder_class = undef,
-  $simianarmy_client_vsphere_password = undef,
-  $simianarmy_client_vsphere_termination_strategy_property_name = undef,
-  $simianarmy_client_vsphere_termination_strategy_property_value = undef,
-  $simianarmy_client_vsphere_url = undef,
-  $simianarmy_client_vsphere_username = undef,
+  Variant[String, Undef] $simianarmy_client_aws_account_key = undef,
+  Variant[String, Undef] $simianarmy_client_aws_account_name = undef,
+  Variant[String, Undef] $simianarmy_client_aws_assume_role_arn = undef,
+  Variant[String, Undef] $simianarmy_client_aws_proxy_host = undef,
+  Variant[String, Undef] $simianarmy_client_aws_proxy_password = undef,
+  Variant[String, Undef] $simianarmy_client_aws_proxy_port = undef,
+  Variant[String, Undef] $simianarmy_client_aws_proxy_user = undef,
+  Variant[String, Undef] $simianarmy_client_aws_region = undef,
+  Variant[String, Undef] $simianarmy_client_aws_secret_key = undef,
+  Variant[String, Undef] $simianarmy_client_chaos_class = undef,
+  Variant[String, Undef] $simianarmy_client_context_class = undef,
+  Variant[String, Undef] $simianarmy_client_recorder_class = undef,
+  Variant[String, Undef] $simianarmy_client_vsphere_password = undef,
+  Variant[String, Undef] $simianarmy_client_vsphere_termination_strategy_property_name = undef,
+  Variant[String, Undef] $simianarmy_client_vsphere_termination_strategy_property_value = undef,
+  Variant[String, Undef] $simianarmy_client_vsphere_url = undef,
+  Variant[String, Undef] $simianarmy_client_vsphere_username = undef,
 
 ) {
   file { $path:

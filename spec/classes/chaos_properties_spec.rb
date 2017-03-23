@@ -3,6 +3,26 @@ describe 'simianarmy::chaos_properties' do
   context 'with defaults for all parameters' do
     it { is_expected.to contain_class('simianarmy::chaos_properties') }
   end
+  context 'with simianarmy_chaos_asg_enabled => foo' do
+    let(:params) { {:simianarmy_chaos_asg_enabled => 'foo', :path => '/tmp/foo', } }
+    it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.chaos.ASG.enabled = foo/) }
+  end
+  context 'with simianarmy_chaos_asg_max_terminations_per_day => foo' do
+    let(:params) { {:simianarmy_chaos_asg_max_terminations_per_day => 'foo', :path => '/tmp/foo', } }
+    it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.chaos.ASG.maxTerminationsPerDay = foo/) }
+  end
+  context 'with simianarmy_chaos_asg_probability => foo' do
+    let(:params) { {:simianarmy_chaos_asg_probability => 'foo', :path => '/tmp/foo', } }
+    it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.chaos.ASG.probability = foo/) }
+  end
+  context 'with simianarmy_chaos_asg_tag_key => foo' do
+    let(:params) { {:simianarmy_chaos_asg_tag_key => 'foo', :path => '/tmp/foo', } }
+    it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.chaos.ASGtag.key = foo/) }
+  end
+  context 'with simianarmy_chaos_asg_tag_value => foo' do
+    let(:params) { {:simianarmy_chaos_asg_tag_value => 'foo', :path => '/tmp/foo', } }
+    it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.chaos.ASGtag.value = foo/) }
+  end
   context 'with simianarmy_chaos_blockallnetworktraffic_enabled => foo' do
     let(:params) { {:simianarmy_chaos_blockallnetworktraffic_enabled => 'foo', :path => '/tmp/foo', } }
     it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.chaos.blockallnetworktraffic.enabled = foo/) }

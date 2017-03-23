@@ -1,4 +1,19 @@
 <% pfx = 'simianarmy::chaos_properties::' -%>
+<%- if scope[pfx + 'simianarmy_chaos_asg_enabled'] != nil -%>
+  <%--%>simianarmy.chaos.ASG.enabled = <%= scope[pfx + 'simianarmy_chaos_asg_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_asg_max_terminations_per_day'] != nil -%>
+  <%--%>simianarmy.chaos.ASG.maxTerminationsPerDay = <%= scope[pfx + 'simianarmy_chaos_asg_max_terminations_per_day'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_asg_probability'] != nil -%>
+  <%--%>simianarmy.chaos.ASG.probability = <%= scope[pfx + 'simianarmy_chaos_asg_probability'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_asg_tag_key'] != nil -%>
+  <%--%>simianarmy.chaos.ASGtag.key = <%= scope[pfx + 'simianarmy_chaos_asg_tag_key'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_chaos_asg_tag_value'] != nil -%>
+  <%--%>simianarmy.chaos.ASGtag.value = <%= scope[pfx + 'simianarmy_chaos_asg_tag_value'] %>
+<%- end -%>
 <%- if scope[pfx + 'simianarmy_chaos_blockallnetworktraffic_enabled'] != nil -%>
   <%--%>simianarmy.chaos.blockallnetworktraffic.enabled = <%= scope[pfx + 'simianarmy_chaos_blockallnetworktraffic_enabled'] %>
 <%- end -%>

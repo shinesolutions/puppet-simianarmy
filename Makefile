@@ -1,43 +1,23 @@
-SIMIAN_ARMY_GIT := ../SimianArmy-git
+GENERATED_CLASSES := manifests/chaos_properties.pp \
+					 manifests/client_properties.pp \
+					 manifests/conformity_properties.pp \
+					 manifests/janitor_properties.pp \
+					 manifests/simianarmy_properties.pp \
+					 manifests/volume_tagging_properties.pp
 
-PROPERTY_FILE_ROOTS = chaos client conformity janitor log4j simianarmy
-PROPERTY_FILES = $(addprefix manifests/,$(addsuffix _properties.pp,$(PROPERTY_FILE_ROOTS)))
+ci: clean Gemfile.lock generated
+	bundle exec rake
 
-all: $(PROPERTY_FILES) manifests/volume_tagging_properties.pp
+generated: $(GENERATED_CLASSES)
 
-manifests/volume_tagging_properties.pp: ${SIMIAN_ARMY_GIT}/src/main/resources/volumeTagging.properties
-	tools/parse_application_properties \
-		--class-prefix simianarmy \
-		--class-name volume_tagging_properties \
-		--template-file templates/volume_tagging_properties.erb \
-		--spec-file spec/classes/volume_tagging_properties_spec.rb \
-		--class-file $@ \
-		$<
+Gemfile.lock: Gemfile
+	bundle install
 
-manifests/%_properties.pp: ${SIMIAN_ARMY_GIT}/src/main/resources/%.properties
-	tools/parse_application_properties \
-		--class-prefix simianarmy \
-		--class-name $*_properties \
-		--template-file templates/$*_properties.erb \
-		--spec-file spec/classes/$*_properties_spec.rb \
-		--class-file $@ \
-		$<
-
-ci: tools clean lint
+manifests/%.pp: generate/%.yaml
+	gen_java_properties_class $<
 
 clean:
-	rm -rf pkg
-	rm -rf test/integration/modules/
-
-lint:
-	puppet-lint \
-		--fail-on-warnings \
-		--no-140chars-check \
-		--no-autoloader_layout-check \
-		--no-documentation-check \
-		--no-only_variable_string-check \
-		--no-selector_inside_resource-check \
-		test/integration/*
+	rm -rf pkg test/integration/modules log junit
 
 test-integration:
 	echo "TODO"
@@ -45,7 +25,4 @@ test-integration:
 build:
 	puppet module build .
 
-tools:
-	gem install puppet puppet-lint
-
-.PHONY: ci clean lint test-integration build tools all
+.PHONY: ci clean test-integration build generated

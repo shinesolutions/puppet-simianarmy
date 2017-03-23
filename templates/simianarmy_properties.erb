@@ -1,12 +1,27 @@
 <% pfx = 'simianarmy::simianarmy_properties::' -%>
+<%- if scope[pfx + 'simianarmy_aws_email_region'] != nil -%>
+  <%--%>simianarmy.aws.email.region = <%= scope[pfx + 'simianarmy_aws_email_region'] %>
+<%- end -%>
 <%- if scope[pfx + 'simianarmy_calendar_close_hour'] != nil -%>
   <%--%>simianarmy.calendar.closeHour = <%= scope[pfx + 'simianarmy_calendar_close_hour'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_calendar_is_monkey_time'] != nil -%>
+  <%--%>simianarmy.calendar.isMonkeyTime = <%= scope[pfx + 'simianarmy_calendar_is_monkey_time'] %>
 <%- end -%>
 <%- if scope[pfx + 'simianarmy_calendar_open_hour'] != nil -%>
   <%--%>simianarmy.calendar.openHour = <%= scope[pfx + 'simianarmy_calendar_open_hour'] %>
 <%- end -%>
 <%- if scope[pfx + 'simianarmy_calendar_timezone'] != nil -%>
   <%--%>simianarmy.calendar.timezone = <%= scope[pfx + 'simianarmy_calendar_timezone'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_recorder_localdb_file'] != nil -%>
+  <%--%>simianarmy.recorder.localdb.file = <%= scope[pfx + 'simianarmy_recorder_localdb_file'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_recorder_localdb_max_events'] != nil -%>
+  <%--%>simianarmy.recorder.localdb.max_events = <%= scope[pfx + 'simianarmy_recorder_localdb_max_events'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_recorder_localdb_password'] != nil -%>
+  <%--%>simianarmy.recorder.localdb.password = <%= scope[pfx + 'simianarmy_recorder_localdb_password'] %>
 <%- end -%>
 <%- if scope[pfx + 'simianarmy_recorder_sdb_domain'] != nil -%>
   <%--%>simianarmy.recorder.sdb.domain = <%= scope[pfx + 'simianarmy_recorder_sdb_domain'] %>
@@ -19,4 +34,7 @@
 <%- end -%>
 <%- if scope[pfx + 'simianarmy_scheduler_threads'] != nil -%>
   <%--%>simianarmy.scheduler.threads = <%= scope[pfx + 'simianarmy_scheduler_threads'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_tags_owner'] != nil -%>
+  <%--%>simianarmy.tags.owner = <%= scope[pfx + 'simianarmy_tags_owner'] %>
 <%- end -%>

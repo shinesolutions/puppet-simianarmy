@@ -7,6 +7,10 @@ describe 'simianarmy::janitor_properties' do
     let(:params) { {:simianarmy_calendar_close_hour => 'foo', :path => '/tmp/foo', } }
     it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.calendar.closeHour = foo/) }
   end
+  context 'with simianarmy_calendar_is_monkey_time => foo' do
+    let(:params) { {:simianarmy_calendar_is_monkey_time => 'foo', :path => '/tmp/foo', } }
+    it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.calendar.isMonkeyTime = foo/) }
+  end
   context 'with simianarmy_calendar_open_hour => foo' do
     let(:params) { {:simianarmy_calendar_open_hour => 'foo', :path => '/tmp/foo', } }
     it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.calendar.openHour = foo/) }
@@ -18,6 +22,26 @@ describe 'simianarmy::janitor_properties' do
   context 'with simianarmy_janitor_eureka_enabled => foo' do
     let(:params) { {:simianarmy_janitor_eureka_enabled => 'foo', :path => '/tmp/foo', } }
     it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.janitor.Eureka.enabled = foo/) }
+  end
+  context 'with simianarmy_janitor_edda_client_retries => foo' do
+    let(:params) { {:simianarmy_janitor_edda_client_retries => 'foo', :path => '/tmp/foo', } }
+    it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.janitor.edda.client.retries = foo/) }
+  end
+  context 'with simianarmy_janitor_edda_client_retry_interval => foo' do
+    let(:params) { {:simianarmy_janitor_edda_client_retry_interval => 'foo', :path => '/tmp/foo', } }
+    it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.janitor.edda.client.retryInterval = foo/) }
+  end
+  context 'with simianarmy_janitor_edda_client_timeout => foo' do
+    let(:params) { {:simianarmy_janitor_edda_client_timeout => 'foo', :path => '/tmp/foo', } }
+    it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.janitor.edda.client.timeout = foo/) }
+  end
+  context 'with simianarmy_janitor_edda_enabled => foo' do
+    let(:params) { {:simianarmy_janitor_edda_enabled => 'foo', :path => '/tmp/foo', } }
+    it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.janitor.edda.enabled = foo/) }
+  end
+  context 'with simianarmy_janitor_edda_endpoint_us_east_1 => foo' do
+    let(:params) { {:simianarmy_janitor_edda_endpoint_us_east_1 => 'foo', :path => '/tmp/foo', } }
+    it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.janitor.edda.endpoint.us-east-1 = foo/) }
   end
   context 'with simianarmy_janitor_enabled => foo' do
     let(:params) { {:simianarmy_janitor_enabled => 'foo', :path => '/tmp/foo', } }
@@ -31,6 +55,10 @@ describe 'simianarmy::janitor_properties' do
     let(:params) { {:simianarmy_janitor_image_crawler_look_back_days => 'foo', :path => '/tmp/foo', } }
     it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.janitor.image.crawler.lookBackDays = foo/) }
   end
+  context 'with simianarmy_janitor_image_owner_id => foo' do
+    let(:params) { {:simianarmy_janitor_image_owner_id => 'foo', :path => '/tmp/foo', } }
+    it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.janitor.image.ownerId = foo/) }
+  end
   context 'with simianarmy_janitor_leashed => foo' do
     let(:params) { {:simianarmy_janitor_leashed => 'foo', :path => '/tmp/foo', } }
     it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.janitor.leashed = foo/) }
@@ -42,6 +70,10 @@ describe 'simianarmy::janitor_properties' do
   context 'with simianarmy_janitor_notification_default_email => foo' do
     let(:params) { {:simianarmy_janitor_notification_default_email => 'foo', :path => '/tmp/foo', } }
     it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.janitor.notification.defaultEmail = foo/) }
+  end
+  context 'with simianarmy_janitor_notification_owner_email_domain => foo' do
+    let(:params) { {:simianarmy_janitor_notification_owner_email_domain => 'foo', :path => '/tmp/foo', } }
+    it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.janitor.notification.ownerEmailDomain = foo/) }
   end
   context 'with simianarmy_janitor_notification_source_email => foo' do
     let(:params) { {:simianarmy_janitor_notification_source_email => 'foo', :path => '/tmp/foo', } }
@@ -170,6 +202,10 @@ describe 'simianarmy::janitor_properties' do
   context 'with simianarmy_janitor_rule_unused_image_rule_retention_days => foo' do
     let(:params) { {:simianarmy_janitor_rule_unused_image_rule_retention_days => 'foo', :path => '/tmp/foo', } }
     it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.janitor.rule.unusedImageRule.retentionDays = foo/) }
+  end
+  context 'with simianarmy_janitor_snapshots_owner_id => foo' do
+    let(:params) { {:simianarmy_janitor_snapshots_owner_id => 'foo', :path => '/tmp/foo', } }
+    it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.janitor.snapshots.ownerId = foo/) }
   end
   context 'with simianarmy_janitor_summary_email_to => foo' do
     let(:params) { {:simianarmy_janitor_summary_email_to => 'foo', :path => '/tmp/foo', } }

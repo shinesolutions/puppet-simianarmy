@@ -2,6 +2,9 @@
 <%- if scope[pfx + 'simianarmy_calendar_close_hour'] != nil -%>
   <%--%>simianarmy.calendar.closeHour = <%= scope[pfx + 'simianarmy_calendar_close_hour'] %>
 <%- end -%>
+<%- if scope[pfx + 'simianarmy_calendar_is_monkey_time'] != nil -%>
+  <%--%>simianarmy.calendar.isMonkeyTime = <%= scope[pfx + 'simianarmy_calendar_is_monkey_time'] %>
+<%- end -%>
 <%- if scope[pfx + 'simianarmy_calendar_open_hour'] != nil -%>
   <%--%>simianarmy.calendar.openHour = <%= scope[pfx + 'simianarmy_calendar_open_hour'] %>
 <%- end -%>
@@ -10,6 +13,21 @@
 <%- end -%>
 <%- if scope[pfx + 'simianarmy_janitor_eureka_enabled'] != nil -%>
   <%--%>simianarmy.janitor.Eureka.enabled = <%= scope[pfx + 'simianarmy_janitor_eureka_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_edda_client_retries'] != nil -%>
+  <%--%>simianarmy.janitor.edda.client.retries = <%= scope[pfx + 'simianarmy_janitor_edda_client_retries'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_edda_client_retry_interval'] != nil -%>
+  <%--%>simianarmy.janitor.edda.client.retryInterval = <%= scope[pfx + 'simianarmy_janitor_edda_client_retry_interval'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_edda_client_timeout'] != nil -%>
+  <%--%>simianarmy.janitor.edda.client.timeout = <%= scope[pfx + 'simianarmy_janitor_edda_client_timeout'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_edda_enabled'] != nil -%>
+  <%--%>simianarmy.janitor.edda.enabled = <%= scope[pfx + 'simianarmy_janitor_edda_enabled'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_edda_endpoint_us_east_1'] != nil -%>
+  <%--%>simianarmy.janitor.edda.endpoint.us-east-1 = <%= scope[pfx + 'simianarmy_janitor_edda_endpoint_us_east_1'] %>
 <%- end -%>
 <%- if scope[pfx + 'simianarmy_janitor_enabled'] != nil -%>
   <%--%>simianarmy.janitor.enabled = <%= scope[pfx + 'simianarmy_janitor_enabled'] %>
@@ -20,6 +38,9 @@
 <%- if scope[pfx + 'simianarmy_janitor_image_crawler_look_back_days'] != nil -%>
   <%--%>simianarmy.janitor.image.crawler.lookBackDays = <%= scope[pfx + 'simianarmy_janitor_image_crawler_look_back_days'] %>
 <%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_image_owner_id'] != nil -%>
+  <%--%>simianarmy.janitor.image.ownerId = <%= scope[pfx + 'simianarmy_janitor_image_owner_id'] %>
+<%- end -%>
 <%- if scope[pfx + 'simianarmy_janitor_leashed'] != nil -%>
   <%--%>simianarmy.janitor.leashed = <%= scope[pfx + 'simianarmy_janitor_leashed'] %>
 <%- end -%>
@@ -28,6 +49,9 @@
 <%- end -%>
 <%- if scope[pfx + 'simianarmy_janitor_notification_default_email'] != nil -%>
   <%--%>simianarmy.janitor.notification.defaultEmail = <%= scope[pfx + 'simianarmy_janitor_notification_default_email'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_notification_owner_email_domain'] != nil -%>
+  <%--%>simianarmy.janitor.notification.ownerEmailDomain = <%= scope[pfx + 'simianarmy_janitor_notification_owner_email_domain'] %>
 <%- end -%>
 <%- if scope[pfx + 'simianarmy_janitor_notification_source_email'] != nil -%>
   <%--%>simianarmy.janitor.notification.sourceEmail = <%= scope[pfx + 'simianarmy_janitor_notification_source_email'] %>
@@ -124,6 +148,9 @@
 <%- end -%>
 <%- if scope[pfx + 'simianarmy_janitor_rule_unused_image_rule_retention_days'] != nil -%>
   <%--%>simianarmy.janitor.rule.unusedImageRule.retentionDays = <%= scope[pfx + 'simianarmy_janitor_rule_unused_image_rule_retention_days'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_janitor_snapshots_owner_id'] != nil -%>
+  <%--%>simianarmy.janitor.snapshots.ownerId = <%= scope[pfx + 'simianarmy_janitor_snapshots_owner_id'] %>
 <%- end -%>
 <%- if scope[pfx + 'simianarmy_janitor_summary_email_to'] != nil -%>
   <%--%>simianarmy.janitor.summaryEmail.to = <%= scope[pfx + 'simianarmy_janitor_summary_email_to'] %>

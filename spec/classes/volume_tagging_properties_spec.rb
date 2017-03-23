@@ -15,4 +15,8 @@ describe 'simianarmy::volume_tagging_properties' do
     let(:params) { {:simianarmy_volume_tagging_leashed => 'foo', :path => '/tmp/foo', } }
     it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.volumeTagging.leashed = foo/) }
   end
+  context 'with simianarmy_volume_tagging_owner_email_domain => foo' do
+    let(:params) { {:simianarmy_volume_tagging_owner_email_domain => 'foo', :path => '/tmp/foo', } }
+    it { is_expected.to contain_file('/tmp/foo').with_content(/^simianarmy.volumeTagging.ownerEmailDomain = foo/) }
+  end
 end
