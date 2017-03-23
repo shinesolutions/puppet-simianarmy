@@ -1,75 +1,67 @@
-# == Class: simianarmy
+# @summary
+#   Install and configure the Netflix Simian Army
 #
-# Install and configure the Netflix Simian Army
-#
-# === Parameters
-#
-# [*service_name*]
+# @param service_name
 #   The name of the service when it is installed. Defaults to
 #   `simianarmy` and several other variables are based on it. You probably
 #   shouldn't change this.
 #
-# [*basedir*]
+# @param basedir
 #   Path to the base directory for installation. Defaults to
 #   '/opt/netflix' and several other paths are based on it.
 #
-# [*installdir*]
+# @param installdir
 #   Path to the directory for installation. The JAR file and configuration
 #   files are installed here. Defaults to <basedir>/<service_name>.
 #
-# [*homedir*]
+# @param homedir
 #   Path to the home directory for the user the service runs as. Only used if
 #   <manage_homedir> is true.
 #
-# [*user*]
+# @param user
 #   The user the service runs as. Defaults to <service_name>.
 #
-# [*group*]
+# @param group
 #   The primary group for user the service runs as. Defaults to <service_name>.
 #
-# [*warfile_source*]
+# @param warfile_source
 #   Source URL for the Netflix Simian Army JAR file.
 #
-# [*warfile_checksum_value*]
+# @param warfile_checksum_value
 #   Checksum of the Netflix Simian Army file. If not specified and an HTTP URL
 #   is used, Puppet will treat the `File` resource as updated on every run.
 #
-# [*manage_basedir*]
+# @param manage_basedir
 #   Whether or not to manage <basedir> as a resource in Puppet.
 #
-# [*manage_installdir*]
+# @param manage_installdir
 #   Whether or not to manage <installdir> as a resource in Puppet.
 #
-# [*manage_homedir*]
+# @param manage_homedir
 #   Whether or not to manage <homedir> as a resource in Puppet.
 #
-# [*manage_user*]
+# @param manage_user
 #   Whether or not to manage <user> as a resource in Puppet.
 #
-# [*manage_group*]
+# @param manage_group
 #   Whether or not to manage <group> as a resource in Puppet.
 #
-# [*warfile_checksum_value*]
+# @param warfile_checksum_value
 #   Checksum type used for `warfile_checksum_value`.
 #
-# [*warfile_checksum_type*]
+# @param warfile_checksum_type
 #   The checksum algorithm used to produce `warfile_checksum_value`.
 #
-# [*warfile_mode*]
+# @param warfile_mode
 #   File mode for the WAR file.
 #
-# [*aws_profile*]
+# @param aws_profile
 #   If specified, sets the `AWS_PROFILE` variable in the service's environment.
 #
-# === Examples
+# @example
+#   include simianarmy
 #
-#  include simianarmy
-#
-# === Authors
-#
-# James Sinclair <james.sinclair@shinesolutions.com>
-#
-# === Copyright
+# @author James Sinclair <james.sinclair@shinesolutions.com>
 #
 # Copyright © 2017	Shine Solutions Group, unless otherwise noted.
 #

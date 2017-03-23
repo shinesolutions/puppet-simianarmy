@@ -1,43 +1,34 @@
-# == Class: simianarmy::log4j_properties
-#
-# Write the `application.properties` file.
-#
-# === Parameters
-#
-# [*path*]
-#   The path to the application.properties file on disk. Required.
-#
-# [*owner*]
-#   The user that should own the application.properties file. This user is *not*
-#   created by this module and should be managed elsewhere. Required.
-#
-# [*group*]
-#   The group that should own the application.properties file. This group is
-#   *not* created by this module and should be managed elsewhere. Required.
-#
-# [*mode*]
-#   The mode of the application.properties file. Passed to the `file` resource.
-#
-# [*log_file_name*]
-#   The name for the daily rotating log file. Default is taken from the parent
-#   class' `service_name` parameter.
-#
-# [*stdout_threshold*]
-#   Logging threshold for the console logger. Default: WARN
-#
-# [*daily_rolling_threshold*]
-#   Logging threshold for the daily rotating logger. Default: INFO
-#
-# === Examples
+# @summary
+#   Write the `application.properties` file.
 #
 #  This is an internal class that isn't normally used. You can change values
 #  for it's parameters using Hiera.
 #
-# === Authors
+# @param path
+#   The path to the application.properties file on disk. Required.
 #
-# James Sinclair <james.sinclair@shinesolutions.com>
+# @param owner
+#   The user that should own the application.properties file. This user is *not*
+#   created by this module and should be managed elsewhere. Required.
 #
-# === Copyright
+# @param group
+#   The group that should own the application.properties file. This group is
+#   *not* created by this module and should be managed elsewhere. Required.
+#
+# @param mode
+#   The mode of the application.properties file. Passed to the `file` resource.
+#
+# @param log_file_name
+#   The name for the daily rotating log file. Default is taken from the parent
+#   class' `service_name` parameter.
+#
+# @param stdout_threshold
+#   Logging threshold for the console logger. Default: WARN
+#
+# @param daily_rolling_threshold
+#   Logging threshold for the daily rotating logger. Default: INFO
+#
+# @author James Sinclair <james.sinclair@shinesolutions.com>
 #
 # Copyright © 2017 Shine Solutions Group, unless otherwise noted.
 #

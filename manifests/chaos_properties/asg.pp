@@ -1,41 +1,37 @@
-# == Class: simianarmy::chaos_properties::asg
+# @summary
+#   Write properties for a specific Autoscaling group (ASG) to the
+#   `chaos.properties` file.
 #
-# Write properties for a specific Autoscaling group (ASG) to the
-# `chaos.properties` file.
-#
-# === Parameters
-#
-# [*path*]
+# @param path
 #   The path to the application.properties file on disk. Defaults to the
 #   `chaos.properties` managed by the `simianarmy::chaos_properties` class.
 #
-# [*enabled*]
+# @param enabled
 #   Boolean to control whether this ASG is enabled.
 #
-# [*probability*]
+# @param probability
 #   This is the probability of termination per day. See the following link for
 #   more details:
 #     https://github.com/Netflix/SimianArmy/wiki/Chaos-Settings#simianarmychaosasgprobability
 #
-# [*max_terminations_per_day*]
+# @param max_terminations_per_day
 #   This setting allows you to set a value of maximum terminations per calendar
 #   day (24 hours) for a specific ASG.
 #
-# [*owner_email*]
+# @param owner_email
 #   Set the destination email that the termination notifications will be sent
 #   to for a specific ASG's instances. Also sets
 #   `simianarmy.chaos.ASG.${title}.notification.enabled` to true.
 #
-# === Examples
+# @example
+#   simianarmy::chaos_properties::asg { <asg_name>:
+#     enabled                  => true,
+#     probability              => 0.5,
+#     max_terminations_per_day => 1.0,
+#     owner_email              => 'owner@domain.com',
+#   }
 #
-#  This is an internal class that isn't normally used. You can change values
-#  for it's parameters using Hiera.
-#
-# === Authors
-#
-# This is an auto-generated class.
-#
-# === Copyright
+# @author James Sinclair <james.sinclair@shinesolutions.com>
 #
 # Copyright © 2017 Shine Solutions Group, unless otherwise noted.
 #
