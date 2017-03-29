@@ -585,14 +585,14 @@ class simianarmy (
 
   package { [ &#39;tomcat&#39; ]:
     ensure =&gt; latest,
-  } -&gt;
-  file { $webapp_path:
+  }
+  -&gt; file { $webapp_path:
     ensure =&gt; directory,
     owner  =&gt; $user,
     group  =&gt; &#39;tomcat&#39;,
     mode   =&gt; &#39;0750&#39;,
-  } -&gt;
-  archive { $warfile:
+  }
+  -&gt; archive { $warfile:
     ensure        =&gt; present,
     source        =&gt; $warfile_source,
     extract       =&gt; true,
@@ -602,13 +602,13 @@ class simianarmy (
     group         =&gt; &#39;tomcat&#39;,
     checksum_type =&gt; $warfile_checksum_type,
     checksum      =&gt; $warfile_checksum_value,
-  } -&gt;
-  file { $warfile:
+  }
+  -&gt; file { $warfile:
     owner =&gt; $user,
     group =&gt; $group,
     mode  =&gt; $warfile_mode,
-  } -&gt;
-  class {
+  }
+  -&gt; class {
     [
       &#39;::simianarmy::chaos_properties&#39;,
       &#39;::simianarmy::client_properties&#39;,
@@ -620,8 +620,8 @@ class simianarmy (
     ]:
       owner =&gt; $user,
       group =&gt; &#39;tomcat&#39;,
-  } -&gt;
-  service { &#39;tomcat&#39;:
+  }
+  -&gt; service { &#39;tomcat&#39;:
     ensure =&gt; running,
     enable =&gt; true,
   }
@@ -633,7 +633,7 @@ class simianarmy (
 </div>
 
       <div id="footer">
-  Generated on Fri Mar 24 10:26:27 2017 by
+  Generated on Thu Mar 30 09:10:20 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.3.1).
 </div>

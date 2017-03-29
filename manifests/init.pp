@@ -126,14 +126,14 @@ class simianarmy (
 
   package { [ 'tomcat' ]:
     ensure => latest,
-  } ->
-  file { $webapp_path:
+  }
+  -> file { $webapp_path:
     ensure => directory,
     owner  => $user,
     group  => 'tomcat',
     mode   => '0750',
-  } ->
-  archive { $warfile:
+  }
+  -> archive { $warfile:
     ensure        => present,
     source        => $warfile_source,
     extract       => true,
@@ -143,13 +143,13 @@ class simianarmy (
     group         => 'tomcat',
     checksum_type => $warfile_checksum_type,
     checksum      => $warfile_checksum_value,
-  } ->
-  file { $warfile:
+  }
+  -> file { $warfile:
     owner => $user,
     group => $group,
     mode  => $warfile_mode,
-  } ->
-  class {
+  }
+  -> class {
     [
       '::simianarmy::chaos_properties',
       '::simianarmy::client_properties',
@@ -161,8 +161,8 @@ class simianarmy (
     ]:
       owner => $user,
       group => 'tomcat',
-  } ->
-  service { 'tomcat':
+  }
+  -> service { 'tomcat':
     ensure => running,
     enable => true,
   }
