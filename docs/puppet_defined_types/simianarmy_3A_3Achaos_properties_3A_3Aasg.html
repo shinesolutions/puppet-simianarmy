@@ -260,7 +260,10 @@ href="mailto:james.sinclair@shinesolutions.com">james.sinclair@shinesolutions.co
 73
 74
 75
-76</pre>
+76
+77
+78
+79</pre>
       </td>
       <td>
         <pre class="code"><span class="info file"># File 'manifests/chaos_properties/asg.pp', line 38</span>
@@ -274,6 +277,9 @@ define simianarmy::chaos_properties::asg (
 
   Variant[String, Undef] $owner_email = undef,
 ) {
+  File_line {
+    path =&gt; $path,
+  }
 
   $line_prefix = &quot;simianarmy.chaos.ASG.${title}&quot;
 
@@ -311,7 +317,7 @@ define simianarmy::chaos_properties::asg (
 </div>
 
       <div id="footer">
-  Generated on Fri Mar 24 10:26:29 2017 by
+  Generated on Wed Mar 29 11:14:13 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.3.1).
 </div>

@@ -44,6 +44,9 @@ define simianarmy::chaos_properties::asg (
 
   Variant[String, Undef] $owner_email = undef,
 ) {
+  File_line {
+    path => $path,
+  }
 
   $line_prefix = "simianarmy.chaos.ASG.${title}"
 
