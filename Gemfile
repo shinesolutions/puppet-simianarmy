@@ -10,6 +10,8 @@ def location_for(place, fake_version = nil)
   end
 end
 
+gem 'gettext-setup', '!= 0.19'
+
 group :test do
   gem 'puppetlabs_spec_helper',                                     :require => false
   gem 'rspec-puppet',                                               :require => false, :git => 'https://github.com/rodjek/rspec-puppet.git'
