@@ -1,6 +1,6 @@
 {
   "name": "shinesolutions-simianarmy",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "author": "Shine Solutions (opensource@shinesolutions.com)",
   "license": "Apache-2.0",
   "summary": "Puppet module for provisioning Netflix Simian Army",
