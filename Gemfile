@@ -29,6 +29,7 @@ group :test do
   gem 'puppet-lint-legacy_facts-check',                             :require => false
   gem 'puppet-lint-duplicate_class_parameters-check',               :require => false
   gem 'metadata-json-lint',                                         :require => false
+  gem 'semantic_puppet',                                            :require => false
   gem 'puppet-blacksmith',                                          :require => false
   gem 'voxpupuli-release',                                          :require => false, :git => 'https://github.com/voxpupuli/voxpupuli-release-gem.git'
   gem 'json_pure', '<= 2.0.1',                                      :require => false if RUBY_VERSION < '2.0.0'
