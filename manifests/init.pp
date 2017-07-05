@@ -74,6 +74,7 @@ class simianarmy (
   String $group,
   String $shell = '/usr/sbin/nologin',
   String $tomcat_pkg_name = 'tomcat',
+  String $tomcat_srv_name = 'tomcat',
 
   String $warfile_source,
   String $warfile_checksum_value,
@@ -164,7 +165,7 @@ class simianarmy (
       owner => $user,
       group => 'tomcat',
   }
-  -> service { 'tomcat':
+  -> service { $tomcat_srv_name:
     ensure => running,
     enable => true,
   }

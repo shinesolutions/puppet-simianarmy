@@ -1,3 +1,5 @@
 ---
 simianarmy::shell: '/sbin/nologin'
 simianarmy::tomcat_pkg_name: tomcat8
+simianarmy::tomcat_srv_name: tomcat8
+simianarmy::installdir: /var/lib/tomcat8/webapps
