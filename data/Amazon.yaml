@@ -1,0 +1,3 @@
+---
+simianarmy::shell: '/sbin/nologin'
+simianarmy::tomcat_pkg_name: tomcat8

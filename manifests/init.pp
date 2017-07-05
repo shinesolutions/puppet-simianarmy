@@ -72,6 +72,8 @@ class simianarmy (
   String $homedir,
   String $user,
   String $group,
+  String $shell = '/usr/sbin/nologin',
+  String $tomcat_pkg_name = 'tomcat',
 
   String $warfile_source,
   String $warfile_checksum_value,
@@ -104,7 +106,7 @@ class simianarmy (
       home       => $homedir,
       managehome => $manage_homedir,
       system     => true,
-      shell      => '/usr/sbin/nologin',
+      shell      => $shell,
       gid        => $group,
       expiry     => absent,
     }
@@ -124,7 +126,7 @@ class simianarmy (
   $warfile = "${homedir}/${service_name}.war"
   $webapp_path = "${installdir}/${service_name}"
 
-  package { [ 'tomcat' ]:
+  package { [ $tomcat_pkg_name ]:
     ensure => latest,
   }
   -> file { $webapp_path:
