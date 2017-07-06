@@ -55,6 +55,15 @@
 # @param warfile_mode
 #   File mode for the WAR file.
 #
+# @param shell
+#   shell for the user to run tomcat
+#
+# @param tomcat_pkg_name
+#   platform specific tomcat package name
+#
+# @param tomcat_srv_name
+#   platform specific tomcat service name
+#
 # @param aws_profile
 #   If specified, sets the `AWS_PROFILE` variable in the service's environment.
 #
@@ -84,6 +93,10 @@ class simianarmy (
   Boolean $manage_user       = true,
   Boolean $manage_group      = true,
 
+  String $shell = '/usr/sbin/nologin',
+  String $tomcat_pkg_name = 'tomcat',
+  String $tomcat_srv_name = 'tomcat',
+
   Variant[String, Undef] $aws_profile = undef,
 ){
   if $manage_basedir {
@@ -104,7 +117,7 @@ class simianarmy (
       home       => $homedir,
       managehome => $manage_homedir,
       system     => true,
-      shell      => '/usr/sbin/nologin',
+      shell      => $shell,
       gid        => $group,
       expiry     => absent,
     }
@@ -124,7 +137,7 @@ class simianarmy (
   $warfile = "${homedir}/${service_name}.war"
   $webapp_path = "${installdir}/${service_name}"
 
-  package { [ 'tomcat' ]:
+  package { [ $tomcat_pkg_name ]:
     ensure => latest,
   }
   -> file { $webapp_path:
@@ -162,7 +175,7 @@ class simianarmy (
       owner => $user,
       group => 'tomcat',
   }
-  -> service { 'tomcat':
+  -> service { $tomcat_srv_name:
     ensure => running,
     enable => true,
   }
