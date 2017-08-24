@@ -6,7 +6,7 @@
 <title>
   Puppet Class: simianarmy
   
-    &mdash; Documentation by YARD 0.9.8
+    &mdash; Documentation by YARD 0.9.9
   
 </title>
 
@@ -374,6 +374,60 @@ every run.</p>
   
     <li>
       
+        <span class='name'>shell</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;/usr/sbin/nologin&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>shell for the user to run tomcat</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>tomcat_pkg_name</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;tomcat&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>platform specific tomcat package name</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>tomcat_srv_name</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;tomcat&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>platform specific tomcat service name</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
         <span class='name'>aws_profile</span>
       
       
@@ -418,15 +472,6 @@ href="mailto:james.sinclair@shinesolutions.com">james.sinclair@shinesolutions.co
         <pre class="lines">
 
 
-68
-69
-70
-71
-72
-73
-74
-75
-76
 77
 78
 79
@@ -519,10 +564,23 @@ href="mailto:james.sinclair@shinesolutions.com">james.sinclair@shinesolutions.co
 166
 167
 168
-169</pre>
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182</pre>
       </td>
       <td>
-        <pre class="code"><span class="info file"># File 'manifests/init.pp', line 68</span>
+        <pre class="code"><span class="info file"># File 'manifests/init.pp', line 77</span>
 
 class simianarmy (
   String $service_name,
@@ -542,6 +600,10 @@ class simianarmy (
   Boolean $manage_homedir    = true,
   Boolean $manage_user       = true,
   Boolean $manage_group      = true,
+
+  String $shell = &#39;/usr/sbin/nologin&#39;,
+  String $tomcat_pkg_name = &#39;tomcat&#39;,
+  String $tomcat_srv_name = &#39;tomcat&#39;,
 
   Variant[String, Undef] $aws_profile = undef,
 ){
@@ -563,7 +625,7 @@ class simianarmy (
       home       =&gt; $homedir,
       managehome =&gt; $manage_homedir,
       system     =&gt; true,
-      shell      =&gt; &#39;/usr/sbin/nologin&#39;,
+      shell      =&gt; $shell,
       gid        =&gt; $group,
       expiry     =&gt; absent,
     }
@@ -583,7 +645,7 @@ class simianarmy (
   $warfile = &quot;${homedir}/${service_name}.war&quot;
   $webapp_path = &quot;${installdir}/${service_name}&quot;
 
-  package { [ &#39;tomcat&#39; ]:
+  package { [ $tomcat_pkg_name ]:
     ensure =&gt; latest,
   }
   -&gt; file { $webapp_path:
@@ -621,7 +683,7 @@ class simianarmy (
       owner =&gt; $user,
       group =&gt; &#39;tomcat&#39;,
   }
-  -&gt; service { &#39;tomcat&#39;:
+  -&gt; service { $tomcat_srv_name:
     ensure =&gt; running,
     enable =&gt; true,
   }
@@ -633,9 +695,9 @@ class simianarmy (
 </div>
 
       <div id="footer">
-  Generated on Thu Mar 30 09:10:20 2017 by
+  Generated on Fri Aug 25 09:57:12 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.3.1).
+  0.9.9 (ruby-2.3.1).
 </div>
 
     </div>
