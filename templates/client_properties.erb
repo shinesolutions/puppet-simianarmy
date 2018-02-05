@@ -8,13 +8,13 @@
 <%- if scope[pfx + 'simianarmy_client_aws_assume_role_arn'] != nil -%>
   <%--%>simianarmy.client.aws.assumeRoleArn = <%= scope[pfx + 'simianarmy_client_aws_assume_role_arn'] %>
 <%- end -%>
-<%- if scope[pfx + 'simianarmy_client_aws_proxy_host'] != nil -%>
+<%- if scope[pfx + 'simianarmy_client_aws_proxy_host'] != nil and scope[pfx + 'simianarmy_client_aws_proxy_host'] != '' -%>
   <%--%>simianarmy.client.aws.proxyHost = <%= scope[pfx + 'simianarmy_client_aws_proxy_host'] %>
 <%- end -%>
 <%- if scope[pfx + 'simianarmy_client_aws_proxy_password'] != nil -%>
   <%--%>simianarmy.client.aws.proxyPassword = <%= scope[pfx + 'simianarmy_client_aws_proxy_password'] %>
 <%- end -%>
-<%- if scope[pfx + 'simianarmy_client_aws_proxy_port'] != nil -%>
+<%- if scope[pfx + 'simianarmy_client_aws_proxy_port'] != nil and scope[pfx + 'simianarmy_client_aws_proxy_port'] != '' -%>
   <%--%>simianarmy.client.aws.proxyPort = <%= scope[pfx + 'simianarmy_client_aws_proxy_port'] %>
 <%- end -%>
 <%- if scope[pfx + 'simianarmy_client_aws_proxy_user'] != nil -%>
