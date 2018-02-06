@@ -1,3 +1,6 @@
+### 1.1.1
+* Exclude proxy-related client properties when value is empty #3
+
 ### 0.2.1
 * Change scope of log file name parameter so test pass in Puppet 4.4
 
