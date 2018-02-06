@@ -1,0 +1,52 @@
+<% pfx = 'simianarmy::client_properties::' -%>
+<%- if scope[pfx + 'simianarmy_client_aws_account_key'] != nil -%>
+  <%--%>simianarmy.client.aws.accountKey = <%= scope[pfx + 'simianarmy_client_aws_account_key'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_client_aws_account_name'] != nil -%>
+  <%--%>simianarmy.client.aws.accountName = <%= scope[pfx + 'simianarmy_client_aws_account_name'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_client_aws_assume_role_arn'] != nil -%>
+  <%--%>simianarmy.client.aws.assumeRoleArn = <%= scope[pfx + 'simianarmy_client_aws_assume_role_arn'] %>
+<%- end -%>
+<%- if !scope[pfx + 'simianarmy_client_aws_proxy_host'].nil? && !scope[pfx + 'simianarmy_client_aws_proxy_host'].empty? -%>
+  <%--%>simianarmy.client.aws.proxyHost = <%= scope[pfx + 'simianarmy_client_aws_proxy_host'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_client_aws_proxy_password'] != nil -%>
+  <%--%>simianarmy.client.aws.proxyPassword = <%= scope[pfx + 'simianarmy_client_aws_proxy_password'] %>
+<%- end -%>
+<%- if !scope[pfx + 'simianarmy_client_aws_proxy_port'].nil? && !scope[pfx + 'simianarmy_client_aws_proxy_port'].empty? -%>
+  <%--%>simianarmy.client.aws.proxyPort = <%= scope[pfx + 'simianarmy_client_aws_proxy_port'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_client_aws_proxy_user'] != nil -%>
+  <%--%>simianarmy.client.aws.proxyUser = <%= scope[pfx + 'simianarmy_client_aws_proxy_user'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_client_aws_region'] != nil -%>
+  <%--%>simianarmy.client.aws.region = <%= scope[pfx + 'simianarmy_client_aws_region'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_client_aws_secret_key'] != nil -%>
+  <%--%>simianarmy.client.aws.secretKey = <%= scope[pfx + 'simianarmy_client_aws_secret_key'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_client_chaos_class'] != nil -%>
+  <%--%>simianarmy.client.chaos.class = <%= scope[pfx + 'simianarmy_client_chaos_class'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_client_context_class'] != nil -%>
+  <%--%>simianarmy.client.context.class = <%= scope[pfx + 'simianarmy_client_context_class'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_client_recorder_class'] != nil -%>
+  <%--%>simianarmy.client.recorder.class = <%= scope[pfx + 'simianarmy_client_recorder_class'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_client_vsphere_password'] != nil -%>
+  <%--%>simianarmy.client.vsphere.password = <%= scope[pfx + 'simianarmy_client_vsphere_password'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_client_vsphere_termination_strategy_property_name'] != nil -%>
+  <%--%>simianarmy.client.vsphere.terminationStrategy.property.name = <%= scope[pfx + 'simianarmy_client_vsphere_termination_strategy_property_name'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_client_vsphere_termination_strategy_property_value'] != nil -%>
+  <%--%>simianarmy.client.vsphere.terminationStrategy.property.value = <%= scope[pfx + 'simianarmy_client_vsphere_termination_strategy_property_value'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_client_vsphere_url'] != nil -%>
+  <%--%>simianarmy.client.vsphere.url = <%= scope[pfx + 'simianarmy_client_vsphere_url'] %>
+<%- end -%>
+<%- if scope[pfx + 'simianarmy_client_vsphere_username'] != nil -%>
+  <%--%>simianarmy.client.vsphere.username = <%= scope[pfx + 'simianarmy_client_vsphere_username'] %>
+<%- end -%>
