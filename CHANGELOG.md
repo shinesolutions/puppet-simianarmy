@@ -1,3 +1,6 @@
+### 1.1.2
+*
+
 ### 1.1.1
 * Exclude proxy-related client properties when value is empty #3
 
