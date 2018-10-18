@@ -1,5 +1,5 @@
 ### 1.1.2
-*
+* Introducing new parameter to manage tomcat package installation #6
 
 ### 1.1.1
 * Exclude proxy-related client properties when value is empty #3

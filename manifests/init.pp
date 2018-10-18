@@ -46,6 +46,9 @@
 # @param manage_group
 #   Whether or not to manage <group> as a resource in Puppet.
 #
+# @param manage_package
+#   Whether or not to manage the installation of package <tomcat_pkg_name>.
+#
 # @param warfile_checksum_value
 #   Checksum type used for `warfile_checksum_value`.
 #
@@ -92,6 +95,7 @@ class simianarmy (
   Boolean $manage_homedir    = true,
   Boolean $manage_user       = true,
   Boolean $manage_group      = true,
+  Boolean $manage_package    = true,
 
   String $shell = '/usr/sbin/nologin',
   String $tomcat_pkg_name = 'tomcat',
@@ -137,10 +141,14 @@ class simianarmy (
   $warfile = "${homedir}/${service_name}.war"
   $webapp_path = "${installdir}/${service_name}"
 
-  package { [ $tomcat_pkg_name ]:
-    ensure => latest,
+  if $manage_package {
+    package { [ $tomcat_pkg_name ]:
+      ensure => latest,
+      before => File[$webapp_path],
+    }
   }
-  -> file { $webapp_path:
+
+  file { $webapp_path:
     ensure => directory,
     owner  => $user,
     group  => 'tomcat',
