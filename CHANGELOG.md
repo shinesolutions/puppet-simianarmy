@@ -1,3 +1,6 @@
+### 1.1.3
+*
+
 ### 1.1.2
 * Introducing new parameter to manage tomcat package installation #6
 * Introduce pdk as Puppet module build
