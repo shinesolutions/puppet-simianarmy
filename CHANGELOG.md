@@ -1,5 +1,7 @@
 ### 1.1.2
 * Introducing new parameter to manage tomcat package installation #6
+* Introduce pdk as Puppet module build
+* Drop Puppet 4 support
 
 ### 1.1.1
 * Exclude proxy-related client properties when value is empty #3

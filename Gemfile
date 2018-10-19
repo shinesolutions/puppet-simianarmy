@@ -36,6 +36,10 @@ group :test do
 end
 
 group :development do
+  gem 'facter', '2.5.1', require: false
+  gem 'puppet', '5.5.6', require: false
+  gem 'puppet-lint',     require: false
+  gem 'rubocop',         require: false
   gem 'travis',         :require => false
   gem 'travis-lint',    :require => false
   gem 'guard-rake',     :require => false
@@ -54,21 +58,10 @@ group :system_tests do
   gem 'beaker-puppet_install_helper',  :require => false
 end
 
-
-
-if facterversion = ENV['FACTER_GEM_VERSION']
-  gem 'facter', facterversion.to_s, :require => false, :groups => [:test]
-else
-  gem 'facter', :require => false, :groups => [:test]
-end
-
 if hieraversion = ENV['HIERA_GEM_VERSION']
   gem 'hiera', hieraversion.to_s, :require => false, :groups => [:test]
 else
   gem 'hiera', :require => false, :groups => [:test]
 end
-
-ENV['PUPPET_VERSION'].nil? ? puppetversion = '~> 4.0' : puppetversion = ENV['PUPPET_VERSION'].to_s
-gem 'puppet', puppetversion, :require => false, :groups => [:test]
 
 # vim: syntax=ruby

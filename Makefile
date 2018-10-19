@@ -5,13 +5,27 @@ GENERATED_CLASSES := manifests/chaos_properties.pp \
 					 manifests/simianarmy_properties.pp \
 					 manifests/volume_tagging_properties.pp
 
-ci: clean Gemfile.lock generated
+ci: clean deps lint generated package
 	bundle exec rake
 
 generated: $(GENERATED_CLASSES)
 
-Gemfile.lock: Gemfile
-	bundle install
+deps:
+	gem install bundler
+	bundle config --local path vendor/bundle
+	bundle install --binstubs
+
+lint:
+	bundle exec puppet-lint \
+		--fail-on-warnings \
+		--no-140chars-check \
+		--no-autoloader_layout-check \
+		--no-documentation-check \
+		manifests/*/*.pp \
+		manifests/*.pp
+	# puppet epp validate templates/*.epp
+	# bundle exec rubocop --config .rubocop.yml Gemfile
+	pdk validate metadata
 
 manifests/%.pp: generate/%.yaml
 	gen_java_properties_class $<
@@ -22,7 +36,7 @@ clean:
 test-integration:
 	echo "TODO"
 
-build:
-	bundle exec puppet module build .
+package:
+	pdk build --force
 
-.PHONY: ci clean test-integration build generated
+.PHONY: ci clean deps lint test-integration package generated
