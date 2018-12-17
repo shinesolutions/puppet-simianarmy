@@ -40,7 +40,7 @@
 #   Java property `simianarmy.volumeTagging.ownerEmailDomain`
 #
 #
-# Copyright © 2017 Shine Solutions Group, unless otherwise noted.
+# Copyright © 2017-2019 Shine Solutions Group, unless otherwise noted.
 #
 class simianarmy::volume_tagging_properties (
   String $path,

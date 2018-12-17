@@ -109,7 +109,7 @@
 #   Java property `simianarmy.scheduler.threads`
 #
 #
-# Copyright © 2017 Shine Solutions Group, unless otherwise noted.
+# Copyright © 2017-2019 Shine Solutions Group, unless otherwise noted.
 #
 class simianarmy::conformity_properties (
   String $path,

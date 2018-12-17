@@ -33,7 +33,7 @@
 #
 # @author James Sinclair <james.sinclair@shinesolutions.com>
 #
-# Copyright © 2017 Shine Solutions Group, unless otherwise noted.
+# Copyright © 2017-2019 Shine Solutions Group, unless otherwise noted.
 #
 define simianarmy::chaos_properties::asg (
   String $path = $::simianarmy::chaos_properties::path,

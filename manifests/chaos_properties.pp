@@ -133,7 +133,7 @@
 #   Java property `simianarmy.client.chaos.class`
 #
 #
-# Copyright © 2017 Shine Solutions Group, unless otherwise noted.
+# Copyright © 2017-2019 Shine Solutions Group, unless otherwise noted.
 #
 class simianarmy::chaos_properties (
   String $path,

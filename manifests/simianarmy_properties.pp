@@ -67,7 +67,7 @@
 #   Java property `simianarmy.tags.owner`
 #
 #
-# Copyright © 2017 Shine Solutions Group, unless otherwise noted.
+# Copyright © 2017-2019 Shine Solutions Group, unless otherwise noted.
 #
 class simianarmy::simianarmy_properties (
   String $path,
