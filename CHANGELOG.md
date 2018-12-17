@@ -1,21 +1,41 @@
-### 1.1.3
-*
+# Changelog
+All notable changes to this project will be documented in this file.
 
-### 1.1.2
-* Introducing new parameter to manage tomcat package installation #6
-* Introduce pdk as Puppet module build
-* Drop Puppet 4 support
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-### 1.1.1
-* Exclude proxy-related client properties when value is empty #3
+## [Unreleased]
 
-### 0.2.1
-* Change scope of log file name parameter so test pass in Puppet 4.4
+### Changed
+-
 
-### 0.2.0
-* Use `puppet-archive` to unpack WAR file
-* Improve logging configuration -- log to stdout and to a file
-* Configurable logging levels
+## [1.1.2] - 2018-10-19
 
-### 0.1.0
-* Initial release
+### Added
+- Introduce pdk as Puppet module build
+
+### Changed
+- Introducing new parameter to manage tomcat package installation #6
+- Drop Puppet 4 support
+
+## [1.1.1] - 2018-02-06
+
+### Changed
+- Exclude proxy-related client properties when value is empty #3
+
+## [0.2.1] - 2017-02-15
+
+### Changed
+- Change scope of log file name parameter so test pass in Puppet 4.4
+
+## [0.2.0] - 2017-02-15
+
+### Changed
+- Use `puppet-archive` to unpack WAR file
+- Improve logging configuration -- log to stdout and to a file
+- Configurable logging levels
+
+## [0.1.0] - unknown
+
+### Added
+- Initial release
