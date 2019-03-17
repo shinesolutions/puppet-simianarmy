@@ -1,7 +1,9 @@
 ---
 simianarmy::service_name: simianarmy
 simianarmy::basedir: /opt/netflix
+simianarmy::basedir_mode: "0755"
 simianarmy::installdir: /var/lib/tomcat/webapps
+simianarmy::installdir_mode: "0750"
 simianarmy::properties_dir: "%{hiera('simianarmy::installdir')}/%{hiera('simianarmy::service_name')}/WEB-INF/classes"
 simianarmy::homedir: "%{hiera('simianarmy::basedir')}/%{hiera('simianarmy::service_name')}"
 simianarmy::user: "%{hiera('simianarmy::service_name')}"

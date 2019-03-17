@@ -10,9 +10,15 @@
 #   Path to the base directory for installation. Defaults to
 #   '/opt/netflix' and several other paths are based on it.
 #
+# @param basedir_mode
+#   File mode for the base directory.
+#
 # @param installdir
 #   Path to the directory for installation. The JAR file and configuration
 #   files are installed here. Defaults to <basedir>/<service_name>.
+#
+# @param installdir_mode
+#   File mode for the installation directory.
 #
 # @param homedir
 #   Path to the home directory for the user the service runs as. Only used if
@@ -90,6 +96,9 @@ class simianarmy (
   String $warfile_checksum_type = 'sha256',
   String $warfile_mode          = '0400',
 
+  String $basedir_mode    = '0755',
+  String $installdir_mode = '0750',
+
   Boolean $manage_basedir    = true,
   Boolean $manage_installdir = false,
   Boolean $manage_homedir    = true,
@@ -106,6 +115,7 @@ class simianarmy (
   if $manage_basedir {
     file { $basedir:
       ensure => directory,
+      mode   => $basedir_mode,
     }
     $basedir_require = File[$basedir]
   } else {
@@ -131,6 +141,7 @@ class simianarmy (
       ensure  => directory,
       owner   => $user,
       group   => $group,
+      mode    => $installdir_mode,
       require => [ $basedir_require, User[$user] ],
     }
     $file_requires = [ File[$installdir], User[$user] ]
