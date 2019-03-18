@@ -6,7 +6,7 @@
 <title>
   Puppet Class: simianarmy
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.18
   
 </title>
 
@@ -78,10 +78,12 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>Copyright © 2017-2019 Shine Solutions Group, unless otherwise noted.</p>
+<p>Copyright © 2017 Shine Solutions Group, unless otherwise noted.</p>
 
   </div>
 </div>
+
+
 <div class="tags">
   
   <div class="examples">
@@ -131,6 +133,24 @@ probably shouldn&#39;t change this.</p>
   
     <li>
       
+        <span class='name'>basedir_mode</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;0755&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>File mode for the base directory.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
         <span class='name'>installdir</span>
       
       
@@ -142,6 +162,24 @@ probably shouldn&#39;t change this.</p>
         <div class='inline'>
 <p>Path to the directory for installation. The JAR file and configuration
 files are installed here. Defaults to &lt;basedir&gt;/&lt;service_name&gt;.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>installdir_mode</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;0750&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>File mode for the installation directory.</p>
 </div>
       
     </li>
@@ -322,6 +360,25 @@ every run.</p>
   
     <li>
       
+        <span class='name'>manage_package</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>true</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Whether or not to manage the installation of package
+&lt;tomcat_pkg_name&gt;.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
         <span class='name'>warfile_checksum_value</span>
       
       
@@ -472,15 +529,6 @@ href="mailto:james.sinclair@shinesolutions.com">james.sinclair@shinesolutions.co
         <pre class="lines">
 
 
-77
-78
-79
-80
-81
-82
-83
-84
-85
 86
 87
 88
@@ -577,10 +625,29 @@ href="mailto:james.sinclair@shinesolutions.com">james.sinclair@shinesolutions.co
 179
 180
 181
-182</pre>
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201</pre>
       </td>
       <td>
-        <pre class="code"><span class="info file"># File 'manifests/init.pp', line 77</span>
+        <pre class="code"><span class="info file"># File 'manifests/init.pp', line 86</span>
 
 class simianarmy (
   String $service_name,
@@ -595,11 +662,15 @@ class simianarmy (
   String $warfile_checksum_type = &#39;sha256&#39;,
   String $warfile_mode          = &#39;0400&#39;,
 
+  String $basedir_mode    = &#39;0755&#39;,
+  String $installdir_mode = &#39;0750&#39;,
+
   Boolean $manage_basedir    = true,
   Boolean $manage_installdir = false,
   Boolean $manage_homedir    = true,
   Boolean $manage_user       = true,
   Boolean $manage_group      = true,
+  Boolean $manage_package    = true,
 
   String $shell = &#39;/usr/sbin/nologin&#39;,
   String $tomcat_pkg_name = &#39;tomcat&#39;,
@@ -610,6 +681,7 @@ class simianarmy (
   if $manage_basedir {
     file { $basedir:
       ensure =&gt; directory,
+      mode   =&gt; $basedir_mode,
     }
     $basedir_require = File[$basedir]
   } else {
@@ -635,6 +707,7 @@ class simianarmy (
       ensure  =&gt; directory,
       owner   =&gt; $user,
       group   =&gt; $group,
+      mode    =&gt; $installdir_mode,
       require =&gt; [ $basedir_require, User[$user] ],
     }
     $file_requires = [ File[$installdir], User[$user] ]
@@ -645,10 +718,14 @@ class simianarmy (
   $warfile = &quot;${homedir}/${service_name}.war&quot;
   $webapp_path = &quot;${installdir}/${service_name}&quot;
 
-  package { [ $tomcat_pkg_name ]:
-    ensure =&gt; latest,
+  if $manage_package {
+    package { [ $tomcat_pkg_name ]:
+      ensure =&gt; latest,
+      before =&gt; File[$webapp_path],
+    }
   }
-  -&gt; file { $webapp_path:
+
+  file { $webapp_path:
     ensure =&gt; directory,
     owner  =&gt; $user,
     group  =&gt; &#39;tomcat&#39;,
