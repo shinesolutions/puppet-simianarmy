@@ -39,4 +39,7 @@ test-integration:
 package:
 	pdk build --force
 
-.PHONY: ci clean deps lint test-integration package generated
+release:
+	rtk release
+
+.PHONY: ci clean deps lint test-integration package generated release
