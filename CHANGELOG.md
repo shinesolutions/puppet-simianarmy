@@ -28,14 +28,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Change scope of log file name parameter so test pass in Puppet 4.4
 
-## [0.2.0] - 2017-02-15
+## [0.2.0] - 2017-02-09
 
 ### Changed
 - Use `puppet-archive` to unpack WAR file
 - Improve logging configuration -- log to stdout and to a file
 - Configurable logging levels
 
-## [0.1.0] - unknown
+## 0.1.0 - 2017-02-14
 
 ### Added
 - Initial release
+
+[Unreleased]: https://github.com/shinesolutions/puppet-simianarmy/compare/1.1.2...HEAD
+[1.1.2]: https://github.com/shinesolutions/puppet-simianarmy/compare/1.1.1...1.1.2
+[1.1.1]: https://github.com/shinesolutions/puppet-simianarmy/compare/0.2.1...1.1.1
+[0.2.1]: https://github.com/shinesolutions/puppet-simianarmy/compare/0.2.0...0.2.1
+[0.2.0]: https://github.com/shinesolutions/puppet-simianarmy/compare/0.1.0...0.2.0
