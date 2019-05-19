@@ -10,8 +10,11 @@ ci: clean deps lint generated package
 
 generated: $(GENERATED_CLASSES)
 
+clean:
+	rm -rf pkg test/integration/modules log junit
+
 deps:
-	gem install bundler
+	gem install bundler --version=1.17.3
 	bundle config --local path vendor/bundle
 	bundle install --binstubs
 
@@ -29,9 +32,6 @@ lint:
 
 manifests/%.pp: generate/%.yaml
 	gen_java_properties_class $<
-
-clean:
-	rm -rf pkg test/integration/modules log junit
 
 test-integration:
 	echo "TODO"
