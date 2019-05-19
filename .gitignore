@@ -1,6 +1,5 @@
 .DS_Store
 pkg/
-Gemfile.lock
 Gemfile.local
 vendor/
 .vendor/
