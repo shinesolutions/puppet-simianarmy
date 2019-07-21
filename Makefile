@@ -28,7 +28,7 @@ lint:
 		manifests/*.pp
 	# puppet epp validate templates/*.epp
 	# bundle exec rubocop --config .rubocop.yml Gemfile
-	pdk validate metadata
+	PDK_DISABLE_ANALYTICS=true pdk validate metadata
 
 manifests/%.pp: generate/%.yaml
 	gen_java_properties_class $<
@@ -37,7 +37,7 @@ test-integration:
 	echo "TODO"
 
 package:
-	pdk build --force
+	PDK_DISABLE_ANALYTICS=true pdk build --force
 
 release:
 	rtk release
