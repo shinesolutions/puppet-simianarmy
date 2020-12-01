@@ -1,4 +1,5 @@
-[![Build Status](https://img.shields.io/travis/shinesolutions/puppet-simianarmy.svg)](http://travis-ci.org/shinesolutions/puppet-simianarmy)
+[![Build Status](https://github.com/shinesolutions/puppet-simianarmy/workflows/CI/badge.svg)](https://github.com/shinesolutions/puppet-simianarmy/actions?workflow=CI)
+
 
 # shinesolutions-simianarmy
 
