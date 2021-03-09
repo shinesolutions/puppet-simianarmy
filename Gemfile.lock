@@ -112,7 +112,7 @@ GEM
     inifile (3.0.0)
     jaro_winkler (1.5.2)
     jgrep (1.5.0)
-    json (2.2.0)
+    json (2.3.1)
     json-schema (2.8.1)
       addressable (>= 2.4)
     launchy (2.4.3)
