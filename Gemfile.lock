@@ -302,7 +302,7 @@ GEM
     unf_ext (0.0.7.6)
     unicode-display_width (1.6.0)
     websocket (1.2.8)
-    yard (0.9.19)
+    yard (0.9.20)
 
 PLATFORMS
   ruby
