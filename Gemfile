@@ -37,7 +37,7 @@ end
 
 group :development do
   gem 'facter', '2.5.1', require: false
-  gem 'puppet', '5.5.6', require: false
+  gem 'puppet', '6.25.1', require: false
   gem 'puppet-lint',     require: false
   gem 'rubocop',         require: false
   gem 'travis',         :require => false
